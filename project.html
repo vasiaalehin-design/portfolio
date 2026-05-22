@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project — Vasily Alekhin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_shared.css">
+<style>
+.project-page { padding-top: 42px; max-width: 1100px; margin: 0 auto; padding-left: 20px; padding-right: 20px; padding-bottom: 100px; }
+
+.project-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 2rem;
+  padding: 40px 0 32px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+.project-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.project-meta { text-align: right; }
+.project-meta p { font-family: 'DM Sans', sans-serif; font-size: 11px; color: var(--muted); line-height: 1.7; }
+.project-meta p strong { color: var(--text); font-weight: 400; }
+
+/* images layout */
+.project-images { display: flex; flex-direction: column; gap: 14px; }
+
+.img-row { display: grid; gap: 14px; }
+.img-row.cols-1 { grid-template-columns: 1fr; }
+.img-row.cols-2 { grid-template-columns: 1fr 1fr; }
+.img-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+.img-row.cols-2-1 { grid-template-columns: 2fr 1fr; }
+
+.project-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: zoom-in;
+  transition: opacity 0.3s ease;
+}
+.project-img:hover { opacity: 0.88; }
+
+.project-desc {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.project-desc h3 { font-family: 'DM Sans', sans-serif; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.project-desc p { font-size: 13px; line-height: 1.85; color: #444; }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 60px;
+  transition: color .2s;
+}
+.back-link:hover { color: var(--text); }
+.back-link::before { content: '←'; }
+
+/* next project */
+.next-project {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+}
+.next-link {
+  text-decoration: none;
+  color: var(--text);
+  text-align: right;
+}
+.next-link span { display: block; font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.next-link h3 { font-family: 'DM Sans', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; transition: opacity .2s; }
+.next-link:hover h3 { opacity: 0.5; }
+
+/* lightbox */
+.lightbox { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.97); z-index: 999; align-items: center; justify-content: center; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+.lightbox-close { position: fixed; top: 18px; right: 20px; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); cursor: pointer; background: none; border: none; }
+.lightbox-close:hover { color: var(--text); }
+
+@media (max-width: 700px) {
+  .project-header { grid-template-columns: 1fr; }
+  .project-meta { text-align: left; }
+  .img-row.cols-2, .img-row.cols-3, .img-row.cols-2-1 { grid-template-columns: 1fr; }
+  .project-desc { grid-template-columns: 1fr; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="transition-overlay" id="overlay"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo" data-link>Vasily Alekhin</a>
+  <div class="nav-right">
+    <ul class="nav-filters">
+      <li><a href="index.html" data-link>Work</a><span class="comma">,</span></li>
+    </ul>
+    <ul class="nav-about">
+      <li><a href="https://instagram.com/" target="_blank">Instagram</a><span class="comma">,</span></li>
+      <li><a href="https://t.me/" target="_blank">Telegram</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="project-page">
+  <a href="index.html" class="back-link reveal" data-link>Back</a>
+
+  <div class="project-header reveal">
+    <h1 class="project-title" id="proj-title">Проект</h1>
+    <div class="project-meta" id="proj-meta"></div>
+  </div>
+
+  <div class="project-images reveal" id="proj-images"></div>
+
+  <div class="project-desc reveal">
+    <div>
+      <h3>About the project</h3>
+      <p id="proj-desc">Project description. Tell about the task, process and result. What was interesting about this work, which tools you used, who you collaborated with.</p>
+    </div>
+    <div>
+      <h3>Details</h3>
+      <p id="proj-details"></p>
+    </div>
+  </div>
+
+  <div class="next-project reveal">
+    <a href="#" class="next-link" id="next-link" data-link>
+      <span>Next project</span>
+      <h3 id="next-title">—</h3>
+    </a>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close">Close · Esc</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="_transitions.js"></script>
+<script>
+// Project data — ✏️ РЕДАКТИРУЙ ЗДЕСЬ
+const projects = {
+  1:  { title: 'Проект 01', year: '2024', cat: '3D Mapping', sub: 'Architectural show', client: 'DreamLaser', tools: 'After Effects, Cinema 4D', imgs: ['https://picsum.photos/seed/w1/1200/800','https://picsum.photos/seed/w1b/1200/600','https://picsum.photos/seed/w1c/600/800','https://picsum.photos/seed/w1d/600/600'] },
+  2:  { title: 'Проект 02', year: '2024', cat: '3D Mapping', sub: 'x DreamLaser', client: 'DreamLaser', tools: 'After Effects, Resolume', imgs: ['https://picsum.photos/seed/w2/1200/700','https://picsum.photos/seed/w2b/600/600','https://picsum.photos/seed/w2c/600/700'] },
+  3:  { title: 'Проект 03', year: '2023', cat: '3D Mapping', sub: 'Outdoor', client: 'DreamLaser', tools: 'AE, C4D', imgs: ['https://picsum.photos/seed/w3/1200/800','https://picsum.photos/seed/w3b/1200/500'] },
+  4:  { title: 'Проект 04', year: '2023', cat: '3D Mapping', sub: 'Event-шоу', client: 'Private client', tools: 'After Effects', imgs: ['https://picsum.photos/seed/w4/1200/900','https://picsum.photos/seed/w4b/600/500','https://picsum.photos/seed/w4c/600/800'] },
+  5:  { title: 'Digital 01', year: '2023', cat: 'Digital', sub: 'After Effects', client: 'Personal project', tools: 'After Effects', imgs: ['https://picsum.photos/seed/w5/1200/700','https://picsum.photos/seed/w5b/1200/600'] },
+  6:  { title: 'Digital 02', year: '2022', cat: 'Digital', sub: 'Generative visual', client: 'Personal project', tools: 'AE, Touch Designer', imgs: ['https://picsum.photos/seed/w6/1200/800','https://picsum.photos/seed/w6b/600/600','https://picsum.photos/seed/w6c/600/600'] },
+  7:  { title: 'Render 01', year: '2022', cat: 'Daily', sub: 'Cinema 4D · Redshift', client: 'Personal project', tools: 'Cinema 4D, Redshift', imgs: ['https://picsum.photos/seed/w7/1200/900','https://picsum.photos/seed/w7b/1200/600'] },
+  8:  { title: 'Render 02', year: '2021', cat: 'Daily', sub: 'Octane · C4D', client: 'Personal project', tools: 'Cinema 4D, Octane', imgs: ['https://picsum.photos/seed/w8/1200/700','https://picsum.photos/seed/w8b/600/700','https://picsum.photos/seed/w8c/600/500'] },
+  9:  { title: 'Проект 05', year: '2023', cat: '3D Mapping', sub: 'Facade', client: 'DreamLaser', tools: 'AE, Resolume', imgs: ['https://picsum.photos/seed/w9/1200/800','https://picsum.photos/seed/w9b/1200/500'] },
+  10: { title: 'Digital 03', year: '2022', cat: 'Digital', sub: 'Loop', client: 'Personal project', tools: 'After Effects', imgs: ['https://picsum.photos/seed/w10/1200/700','https://picsum.photos/seed/w10b/600/600','https://picsum.photos/seed/w10c/600/800'] },
+  11: { title: 'Render 03', year: '2021', cat: 'Daily', sub: 'Cinema 4D', client: 'Personal project', tools: 'Cinema 4D', imgs: ['https://picsum.photos/seed/w11/1200/900','https://picsum.photos/seed/w11b/1200/600'] },
+  12: { title: 'Проект 06', year: '2022', cat: '3D Mapping', sub: 'Architectural show', client: 'DreamLaser', tools: 'AE, C4D', imgs: ['https://picsum.photos/seed/w12/1200/800','https://picsum.photos/seed/w12b/600/700','https://picsum.photos/seed/w12c/600/600'] },
+  13: { title: 'Digital 04', year: '2021', cat: 'Digital', sub: 'Ambient', client: 'Personal project', tools: 'After Effects', imgs: ['https://picsum.photos/seed/w13/1200/700','https://picsum.photos/seed/w13b/1200/500'] },
+  14: { title: 'Render 04', year: '2022', cat: 'Daily', sub: 'Octane · C4D', client: 'Personal project', tools: 'C4D, Octane', imgs: ['https://picsum.photos/seed/w14/1200/800','https://picsum.photos/seed/w14b/600/600','https://picsum.photos/seed/w14c/600/700'] },
+  15: { title: 'Проект 07', year: '2021', cat: '3D Mapping', sub: 'Outdoor', client: 'Private client', tools: 'AE, Resolume', imgs: ['https://picsum.photos/seed/w15/1200/900','https://picsum.photos/seed/w15b/1200/600'] },
+  16: { title: '3D Render 01', year: '2024', cat: 'Daily', sub: 'Cinema 4D · Redshift', client: 'Personal project', tools: 'Cinema 4D, Redshift', imgs: ['https://picsum.photos/seed/r1/1200/800','https://picsum.photos/seed/r1b/1200/600'] },
+  17: { title: '3D Render 02', year: '2023', cat: 'Daily', sub: 'Octane', client: 'Personal project', tools: 'C4D, Octane', imgs: ['https://picsum.photos/seed/r2/1200/900','https://picsum.photos/seed/r2b/600/600','https://picsum.photos/seed/r2c/600/700'] },
+  18: { title: '3D Render 03', year: '2022', cat: 'Daily', sub: 'Cinema 4D', client: 'Personal project', tools: 'Cinema 4D', imgs: ['https://picsum.photos/seed/r3/1200/700','https://picsum.photos/seed/r3b/1200/500'] },
+  19: { title: '3D Render 04', year: '2021', cat: 'Daily', sub: 'Redshift', client: 'Personal project', tools: 'C4D, Redshift', imgs: ['https://picsum.photos/seed/r4/1200/800','https://picsum.photos/seed/r4b/600/700','https://picsum.photos/seed/r4c/600/600'] },
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = parseInt(params.get('id')) || 1;
+const p = projects[id] || projects[1];
+const ids = Object.keys(projects).map(Number);
+const nextId = ids[(ids.indexOf(id) + 1) % ids.length];
+const next = projects[nextId];
+
+// Fill header
+document.getElementById('proj-title').textContent = p.title + ' (' + p.year + ')';
+document.getElementById('proj-meta').innerHTML =
+  `<p><strong>${p.cat}</strong></p><p>${p.sub}</p><p style="margin-top:8px">Client: ${p.client}</p>`;
+document.getElementById('proj-details').innerHTML =
+  `Year: ${p.year}<br>Category: ${p.cat}<br>Tools: ${p.tools}`;
+document.title = p.title + ' — Василий Алёхин';
+
+// Build image grid
+const layouts = [
+  ['cols-1'],
+  ['cols-2'],
+  ['cols-1','cols-2'],
+  ['cols-1','cols-3'],
+  ['cols-2-1','cols-2'],
+];
+const layout = layouts[Math.min(p.imgs.length - 1, layouts.length - 1)];
+const container = document.getElementById('proj-images');
+
+let imgIndex = 0;
+layout.forEach(cls => {
+  const count = cls === 'cols-1' ? 1 : cls === 'cols-2' ? 2 : cls === 'cols-3' ? 3 : cls === 'cols-2-1' ? 3 : 1;
+  const row = document.createElement('div');
+  row.className = 'img-row ' + cls;
+  for (let i = 0; i < count && imgIndex < p.imgs.length; i++, imgIndex++) {
+    const src = p.imgs[imgIndex];
+    const img = document.createElement('img');
+    img.className = 'project-img';
+    img.src = src;
+    img.alt = '';
+    img.onclick = () => openLightbox(src);
+    row.appendChild(img);
+  }
+  if (row.children.length > 0) container.appendChild(row);
+});
+
+// Next project
+document.getElementById('next-title').textContent = next.title + ' (' + next.year + ')';
+document.getElementById('next-link').href = 'project.html?id=' + nextId;
+
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>

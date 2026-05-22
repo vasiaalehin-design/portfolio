@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Vasily Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: #f5f5f5; color: #111; font-size: 13px; }
+
+header {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 14px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky; top: 0; z-index: 100;
+}
+header h1 { font-size: 14px; font-weight: 500; }
+header span { font-size: 11px; color: #999; }
+
+.toolbar {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 30px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  padding: 7px 16px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  cursor: pointer;
+  transition: all .15s;
+  font-weight: 400;
+}
+.btn:hover { background: #f5f5f5; }
+.btn.primary {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+.btn.primary:hover { background: #333; }
+.btn.success {
+  background: #16a34a;
+  color: #fff;
+  border-color: #16a34a;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 30px; }
+
+.section-title {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 16px;
+  margin-top: 32px;
+}
+.section-title:first-child { margin-top: 0; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+
+.card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+.card:hover { border-color: #bbb; }
+.card.has-image { border-color: #16a34a; }
+
+.card-thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #f0f0f0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+.card-thumb img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card-thumb .drop-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #bbb;
+  transition: color .2s;
+  pointer-events: none;
+}
+.card-thumb:hover .drop-hint { color: #888; }
+.card-thumb.drag-over { background: #f0fdf4; border: 2px dashed #16a34a; }
+.drop-icon { font-size: 24px; }
+.drop-text { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+.card-body { padding: 12px 14px; }
+.card-id { font-size: 10px; color: #bbb; margin-bottom: 4px; }
+.card-name { font-size: 13px; font-weight: 400; margin-bottom: 2px; }
+.card-sub { font-size: 11px; color: #999; }
+.card-actions { display: flex; gap: 6px; margin-top: 10px; }
+.card-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  cursor: pointer;
+  transition: all .15s;
+}
+.card-btn:hover { background: #f5f5f5; }
+.card-btn.danger { color: #dc2626; border-color: #fca5a5; }
+.card-btn.danger:hover { background: #fef2f2; }
+
+.toast {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  background: #111;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity .3s;
+  z-index: 999;
+}
+.toast.show { opacity: 1; }
+
+.stats {
+  display: flex;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.stat { text-align: center; }
+.stat-num { font-size: 1.5rem; font-weight: 500; display: block; line-height: 1; margin-bottom: 4px; }
+.stat-label { font-size: 10px; color: #999; letter-spacing: 0.1em; text-transform: uppercase; }
+
+input[type=file] { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Portfolio Admin — Vasily Alyokhin</h1>
+  <span>Нажми на карточку или перетащи фото</span>
+</header>
+
+<div class="toolbar">
+  <button class="btn primary" onclick="downloadIndex()">⬇ Скачать index.html</button>
+  <button class="btn primary" onclick="downloadProject()">⬇ Скачать project.html</button>
+  <button class="btn" onclick="resetAll()">Сбросить все фото</button>
+  <span style="margin-left:auto;font-size:11px;color:#999" id="save-hint"></span>
+</div>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat"><span class="stat-num" id="stat-total">0</span><span class="stat-label">Всего проектов</span></div>
+    <div class="stat"><span class="stat-num" id="stat-filled">0</span><span class="stat-label">С фото</span></div>
+    <div class="stat"><span class="stat-num" id="stat-empty">0</span><span class="stat-label">Без фото</span></div>
+  </div>
+
+  <div class="section-title">3D Mapping</div>
+  <div class="grid" id="grid-3d-mapping"></div>
+
+  <div class="section-title">Digital</div>
+  <div class="grid" id="grid-digital"></div>
+
+  <div class="section-title">Daily</div>
+  <div class="grid" id="grid-daily"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<input type="file" id="file-input" accept="image/*" multiple>
+
+<script>
+const projects = [
+  { id: 1,  cat: '3d-mapping', name: 'Project 01', sub: 'Architectural show', seed: 'w1' },
+  { id: 2,  cat: 'digital',    name: 'Digital 01',  sub: 'After Effects',       seed: 'w2' },
+  { id: 3,  cat: 'daily',      name: 'Daily 01',    sub: 'Cinema 4D',            seed: 'w3' },
+  { id: 4,  cat: '3d-mapping', name: 'Project 02', sub: 'x DreamLaser',         seed: 'w4' },
+  { id: 5,  cat: 'digital',    name: 'Digital 02',  sub: 'Generative visual',    seed: 'w5' },
+  { id: 6,  cat: 'daily',      name: 'Daily 02',    sub: 'Redshift · C4D',       seed: 'w6' },
+  { id: 7,  cat: '3d-mapping', name: 'Project 03', sub: 'Outdoor mapping',      seed: 'w7' },
+  { id: 8,  cat: 'digital',    name: 'Digital 03',  sub: 'Motion loop',          seed: 'w8' },
+  { id: 9,  cat: 'daily',      name: 'Daily 03',    sub: 'Octane · C4D',         seed: 'w9' },
+  { id: 10, cat: '3d-mapping', name: 'Project 04', sub: 'Live event',           seed: 'w10' },
+  { id: 11, cat: 'digital',    name: 'Digital 04',  sub: 'Ambient visual',       seed: 'w11' },
+  { id: 12, cat: 'daily',      name: 'Daily 04',    sub: 'Cinema 4D',            seed: 'w12' },
+  { id: 13, cat: '3d-mapping', name: 'Project 05', sub: 'Facade · DreamLaser',  seed: 'w13' },
+  { id: 14, cat: 'digital',    name: 'Digital 05',  sub: 'After Effects',        seed: 'w14' },
+  { id: 15, cat: 'daily',      name: 'Daily 05',    sub: 'Redshift render',      seed: 'w15' },
+  { id: 16, cat: '3d-mapping', name: 'Project 06', sub: 'Architectural show',   seed: 'r1' },
+  { id: 17, cat: 'digital',    name: 'Digital 06',  sub: 'Motion design',        seed: 'r2' },
+  { id: 18, cat: 'daily',      name: 'Daily 06',    sub: 'C4D · Octane',         seed: 'r3' },
+];
+
+// Store: { id -> { thumb: base64, full: base64 } }
+const images = {};
+let activeId = null;
+
+function loadFromStorage() {
+  try {
+    const saved = localStorage.getItem('portfolio_images');
+    if (saved) Object.assign(images, JSON.parse(saved));
+  } catch(e) {}
+}
+
+function saveToStorage() {
+  try {
+    localStorage.setItem('portfolio_images', JSON.stringify(images));
+  } catch(e) {
+    showToast('Фото слишком большие для localStorage — скачай сразу после загрузки');
+  }
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function updateStats() {
+  const filled = projects.filter(p => images[p.id]).length;
+  document.getElementById('stat-total').textContent = projects.length;
+  document.getElementById('stat-filled').textContent = filled;
+  document.getElementById('stat-empty').textContent = projects.length - filled;
+}
+
+function buildGrid() {
+  const grids = {
+    '3d-mapping': document.getElementById('grid-3d-mapping'),
+    'digital': document.getElementById('grid-digital'),
+    'daily': document.getElementById('grid-daily'),
+  };
+  Object.values(grids).forEach(g => g.innerHTML = '');
+
+  projects.forEach(p => {
+    const hasImg = !!images[p.id];
+    const card = document.createElement('div');
+    card.className = 'card' + (hasImg ? ' has-image' : '');
+    card.dataset.id = p.id;
+
+    const thumbSrc = hasImg
+      ? images[p.id].thumb
+      : `https://picsum.photos/seed/${p.seed}/400/300`;
+
+    card.innerHTML = `
+      <div class="card-thumb" onclick="triggerUpload(${p.id})" ondragover="onDragOver(event,this)" ondragleave="onDragLeave(this)" ondrop="onDrop(event,${p.id},this)">
+        <img src="${thumbSrc}" alt="">
+        ${!hasImg ? `<div class="drop-hint" style="position:absolute"><div class="drop-icon">+</div><div class="drop-text">Фото</div></div>` : ''}
+      </div>
+      <div class="card-body">
+        <div class="card-id">#${p.id} · ${p.cat}</div>
+        <div class="card-name">${p.name}</div>
+        <div class="card-sub">${p.sub}</div>
+        <div class="card-actions">
+          <button class="card-btn" onclick="triggerUpload(${p.id})">Загрузить</button>
+          ${hasImg ? `<button class="card-btn danger" onclick="removeImage(${p.id})">Удалить</button>` : ''}
+        </div>
+      </div>
+    `;
+    grids[p.cat].appendChild(card);
+  });
+  updateStats();
+}
+
+function triggerUpload(id) {
+  activeId = id;
+  const fi = document.getElementById('file-input');
+  fi.value = '';
+  fi.click();
+}
+
+document.getElementById('file-input').addEventListener('change', function() {
+  if (!this.files[0] || !activeId) return;
+  loadImageFile(activeId, this.files[0]);
+});
+
+function loadImageFile(id, file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    images[id] = { thumb: e.target.result, full: e.target.result };
+    saveToStorage();
+    buildGrid();
+    showToast(`✓ Фото для проекта #${id} загружено`);
+    document.getElementById('save-hint').textContent = 'Есть изменения — скачай файлы ↑';
+  };
+  reader.readAsDataURL(file);
+}
+
+function removeImage(id) {
+  delete images[id];
+  saveToStorage();
+  buildGrid();
+  showToast('Фото удалено');
+}
+
+function onDragOver(e, el) {
+  e.preventDefault();
+  el.classList.add('drag-over');
+  const img = el.querySelector('img');
+  if (img) img.style.opacity = '0.3';
+}
+
+function onDragLeave(el) {
+  el.classList.remove('drag-over');
+  const img = el.querySelector('img');
+  if (img) img.style.opacity = '';
+}
+
+function onDrop(e, id, el) {
+  e.preventDefault();
+  onDragLeave(el);
+  const file = e.dataTransfer.files[0];
+  if (!file || !file.type.startsWith('image/')) return;
+  loadImageFile(id, file);
+}
+
+function resetAll() {
+  if (!confirm('Сбросить все загруженные фото?')) return;
+  Object.keys(images).forEach(k => delete images[k]);
+  saveToStorage();
+  buildGrid();
+  showToast('Все фото сброшены');
+}
+
+// ── GENERATE index.html ──
+function downloadIndex() {
+  fetch('index.html')
+    .then(r => r.text())
+    .then(html => {
+      projects.forEach(p => {
+        if (!images[p.id]) return;
+        const b64 = images[p.id].full;
+        // Replace thumbnail in index.html grid
+        const seedRegex = new RegExp(`https://picsum\\.photos/seed/${p.seed}/[0-9/]+`, 'g');
+        html = html.replace(seedRegex, b64);
+      });
+      download('index.html', html);
+      showToast('index.html скачан!');
+    });
+}
+
+// ── GENERATE project.html ──
+function downloadProject() {
+  fetch('project.html')
+    .then(r => r.text())
+    .then(html => {
+      projects.forEach(p => {
+        if (!images[p.id]) return;
+        const b64 = images[p.id].full;
+        // Replace all picsum refs for this seed in project data
+        const seedRegex = new RegExp(`https://picsum\\.photos/seed/${p.seed}[^'"]*`, 'g');
+        html = html.replace(seedRegex, b64);
+      });
+      download('project.html', html);
+      showToast('project.html скачан!');
+    });
+}
+
+function download(filename, content) {
+  const blob = new Blob([content], { type: 'text/html' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+}
+
+// init
+loadFromStorage();
+buildGrid();
+</script>
+</body>
+</html>

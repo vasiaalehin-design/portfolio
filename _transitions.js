@@ -1,0 +1,42 @@
+// Page transition engine
+const overlay = document.getElementById('overlay');
+
+// Fade in on load
+window.addEventListener('DOMContentLoaded', () => {
+  requestAnimationFrame(() => {
+    document.body.classList.add('ready');
+  });
+});
+
+// Intercept all [data-link] clicks
+document.addEventListener('click', e => {
+  const link = e.target.closest('[data-link]');
+  if (!link) return;
+  const href = link.getAttribute('href');
+  if (!href || href === '#' || href.startsWith('http') || href.startsWith('mailto')) return;
+
+  e.preventDefault();
+
+  // Fade out
+  overlay.classList.add('out');
+  document.body.style.transition = 'opacity 0.3s ease';
+  document.body.style.opacity = '0';
+
+  setTimeout(() => {
+    window.location.href = href;
+  }, 320);
+});
+
+// Scroll reveal
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 70);
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.07 });
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+});
