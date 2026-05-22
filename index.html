@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vasily AlekhinVasily Alekhin — Motion Designer</title>
+<title>Vasily Alyokhin — Motion Designer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="_shared.css">
@@ -34,6 +34,19 @@
   overflow: hidden;
   background: #f0f0f0;
   position: relative;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.work-thumb::after {
+  content: '';
+  display: block;
+  width: 100%;
+  padding-bottom: 75%;
+}
+.work-thumb img[src=""] {
+  display: none;
 }
 .work-thumb img {
   width: 100%; height: auto;
@@ -41,6 +54,15 @@
   transition: transform 0.6s var(--ease), opacity 0.3s ease;
 }
 .work-card:hover .work-thumb img {
+  transform: scale(1.03);
+  opacity: 0.85;
+}
+.work-thumb video {
+  width: 100%; height: auto;
+  display: block;
+  transition: transform 0.6s var(--ease), opacity 0.3s ease;
+}
+.work-card:hover .work-thumb video {
   transform: scale(1.03);
   opacity: 0.85;
 }
@@ -122,7 +144,7 @@
 <div class="transition-overlay" id="overlay"></div>
 
 <nav>
-  <a href="index.html" class="nav-logo" data-link>Vasily Alekhin</a>
+  <a href="index.html" class="nav-logo" data-link>Vasily Alyokhin</a>
   <div class="nav-right">
     <ul class="nav-filters">
       <li><button class="active" onclick="filterWorks('all',this)">All</button><span class="comma">,</span></li>
@@ -144,7 +166,7 @@
     <div class="works-grid" id="works-grid">
 
       <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=1" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w1/600/800" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Project 01 (2024)</h3><p>Architectural show</p></div>
       </a>
       <a class="work-card reveal" data-cat="digital" href="project.html?id=2" data-link>
@@ -152,67 +174,67 @@
         <div class="work-info"><h3>Digital 01 (2024)</h3><p>After Effects</p></div>
       </a>
       <a class="work-card reveal" data-cat="daily" href="project.html?id=3" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w3/600/450" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Daily 01 (2023)</h3><p>Cinema 4D</p></div>
       </a>
       <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=4" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w4/600/750" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Project 02 (2023)</h3><p>x DreamLaser</p></div>
       </a>
       <a class="work-card reveal" data-cat="digital" href="project.html?id=5" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w5/600/600" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Digital 02 (2023)</h3><p>Generative visual</p></div>
       </a>
       <a class="work-card reveal" data-cat="daily" href="project.html?id=6" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w6/600/500" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Daily 02 (2022)</h3><p>Redshift · C4D</p></div>
       </a>
       <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=7" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w7/600/800" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Project 03 (2022)</h3><p>Outdoor mapping</p></div>
       </a>
       <a class="work-card reveal" data-cat="digital" href="project.html?id=8" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w8/600/400" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Digital 03 (2022)</h3><p>Motion loop</p></div>
       </a>
       <a class="work-card reveal" data-cat="daily" href="project.html?id=9" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w9/600/700" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Daily 03 (2022)</h3><p>Octane · C4D</p></div>
       </a>
       <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=10" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w10/600/500" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Project 04 (2022)</h3><p>Live event</p></div>
       </a>
       <a class="work-card reveal" data-cat="digital" href="project.html?id=11" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w11/600/600" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Digital 04 (2021)</h3><p>Ambient visual</p></div>
       </a>
       <a class="work-card reveal" data-cat="daily" href="project.html?id=12" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w12/600/800" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Daily 04 (2021)</h3><p>Cinema 4D</p></div>
       </a>
       <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=13" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w13/600/450" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Project 05 (2021)</h3><p>Facade · DreamLaser</p></div>
       </a>
       <a class="work-card reveal" data-cat="digital" href="project.html?id=14" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w14/600/600" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Digital 05 (2021)</h3><p>After Effects</p></div>
       </a>
       <a class="work-card reveal" data-cat="daily" href="project.html?id=15" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/w15/600/700" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Daily 05 (2020)</h3><p>Redshift render</p></div>
       </a>
       <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=16" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/r1/600/600" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Project 06 (2020)</h3><p>Architectural show</p></div>
       </a>
       <a class="work-card reveal" data-cat="digital" href="project.html?id=17" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/r2/600/500" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Digital 06 (2020)</h3><p>Motion design</p></div>
       </a>
       <a class="work-card reveal" data-cat="daily" href="project.html?id=18" data-link>
-        <div class="work-thumb"><img src="https://picsum.photos/seed/r3/600/750" alt=""></div>
+        <div class="work-thumb"><img src="" onerror="this.style.display='none'" alt=""></div>
         <div class="work-info"><h3>Daily 06 (2020)</h3><p>C4D · Octane</p></div>
       </a>
 
