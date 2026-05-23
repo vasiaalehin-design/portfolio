@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project — Vasily Alyokhin</title>
-<meta name="description" content="Motion design project by Vasily Alyokhin.">
+<title>Project — Vasily Alekhin</title>
+<meta name="description" content="Motion design project by Vasily Alekhin.">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#faf9f7">
 <link rel="stylesheet" href="_shared.css">
 <style>
-.project-page { padding-top: 42px; max-width: 1100px; margin: 0 auto; padding-left: 20px; padding-right: 20px; padding-bottom: 100px; }
+.project-page { padding-top: 42px; padding-bottom: 100px; }
 
 .project-header {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: end;
   gap: 2rem;
-  padding: 40px 0 32px;
+  padding: 40px 30px 32px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 40px;
 }
@@ -32,123 +32,118 @@
 .project-meta p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; color: var(--muted); line-height: 1.7; }
 .project-meta p strong { color: var(--text); font-weight: 400; }
 
-/* images layout */
-.project-images { display: flex; flex-direction: column; gap: 14px; }
+/* ── IMAGE BLOCKS ── */
+.project-images { display: flex; flex-direction: column; gap: 30px; }
 
-.img-row { display: grid; gap: 14px; }
-.img-row.cols-1 { grid-template-columns: 1fr; }
-.img-row.cols-2 { grid-template-columns: 1fr 1fr; }
-.img-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
-.img-row.cols-2-1 { grid-template-columns: 2fr 1fr; }
+/* Full width */
+.block-full { padding: 0 30px; }
+.block-full img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: opacity 0.3s ease; }
+.block-full img:hover { opacity: 0.92; }
 
-.project-img {
-  width: 100%;
-  height: auto;
+/* Carousel */
+.block-carousel { overflow: hidden; padding: 0 30px; }
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  user-select: none;
+  transition: transform 0.05s linear;
+}
+.carousel-track.is-dragging { cursor: grabbing; }
+.carousel-track img {
+  flex-shrink: 0;
+  height: 420px;
+  width: auto;
   display: block;
-  cursor: zoom-in;
+  cursor: grab;
   transition: opacity 0.3s ease;
 }
-.project-img:hover { opacity: 0.88; }
+.carousel-track img:hover { opacity: 0.92; }
+
+/* 2x2 grid */
+.block-grid2x2 { padding: 0 30px; }
+.grid2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.grid2x2 img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: opacity 0.3s ease; }
+.grid2x2 img:hover { opacity: 0.92; }
+
+/* 2 col row */
+.block-2col { padding: 0 30px; }
+.row2col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.row2col img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: opacity 0.3s ease; }
+.row2col img:hover { opacity: 0.92; }
+
+/* 3 col row */
+.block-3col { padding: 0 30px; }
+.row3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
+.row3col img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: opacity 0.3s ease; }
+.row3col img:hover { opacity: 0.92; }
 
 .project-desc {
   margin-top: 48px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  padding-top: 32px;
+  padding: 32px 30px 0;
   border-top: 1px solid var(--border);
 }
 .project-desc h3 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
 .project-desc p { font-size: 13px; line-height: 1.85; color: #444; }
 
 .back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 11px;
-  color: var(--muted);
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-top: 60px;
-  transition: color .2s;
+  font-size: 11px; color: var(--muted); text-decoration: none;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin: 60px 0 0 30px; transition: color .2s; display: block;
 }
 .back-link:hover { color: var(--text); }
-.back-link::before { content: '←'; }
+.back-link::before { content: '← '; }
 
-/* next project */
-.next-project {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 80px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-}
-.next-link {
-  text-decoration: none;
-  color: var(--text);
-  text-align: right;
-}
+.next-project { display: flex; justify-content: flex-end; margin-top: 80px; padding: 32px 30px 0; border-top: 1px solid var(--border); }
+.next-link { text-decoration: none; color: var(--text); text-align: right; }
 .next-link span { display: block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 .next-link h3 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; transition: opacity .2s; }
 .next-link:hover h3 { opacity: 0.5; }
 
-/* video */
-.project-video-wrap {
-  position: relative;
-  width: 100%;
-  line-height: 0;
-}
-.project-video {
-  width: 100%;
-  height: auto;
-  display: block;
-  cursor: pointer;
-}
-.sound-icon {
-  position: absolute;
-  bottom: 10px;
-  right: 12px;
-  font-size: 14px;
-  opacity: 0;
-  transition: opacity .2s;
-  pointer-events: none;
-  background: rgba(255,255,255,0.7);
-  border-radius: 4px;
-  padding: 2px 5px;
-  line-height: 1.4;
-}
-.project-video-wrap:hover .sound-icon { opacity: 1; }
+/* reveal home */
+.home-preview { position: fixed; bottom: 0; left: 0; right: 0; height: 100vh; z-index: 0; overflow: hidden; }
+.home-preview iframe { width: 100%; height: 100%; border: none; pointer-events: none; }
+.project-page { position: relative; z-index: 1; background: var(--bg); }
+nav { z-index: 10; }
+.page-wrapper { position: relative; z-index: 1; background: var(--bg); will-change: transform; }
 
-/* lightbox */
-.lightbox { display: none; position: fixed; inset: 0; background: rgba(255,255,255,0.97); z-index: 999; align-items: center; justify-content: center; }
+.lightbox { display: none; position: fixed; inset: 0; background: rgba(250,249,247,0.97); z-index: 999; align-items: center; justify-content: center; }
 .lightbox.open { display: flex; }
 .lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
 .lightbox-close { position: fixed; top: 18px; right: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); cursor: pointer; background: none; border: none; }
 .lightbox-close:hover { color: var(--text); }
 
 @media (max-width: 700px) {
-  .project-header { grid-template-columns: 1fr; }
+  .project-header { grid-template-columns: 1fr; padding: 30px 20px 24px; }
   .project-meta { text-align: left; }
-  .img-row.cols-2, .img-row.cols-3, .img-row.cols-2-1 { grid-template-columns: 1fr; }
-  .project-desc { grid-template-columns: 1fr; gap: 24px; }
+  .grid2x2, .row2col, .row3col { grid-template-columns: 1fr; }
+  .carousel-track img { height: 260px; }
+  .project-desc { grid-template-columns: 1fr; gap: 24px; padding: 24px 30px 0; }
+  .next-project { padding: 24px 30px 0; }
 }
 </style><link rel="stylesheet" href="https://fonts.bunny.net/css?family=libre-baskerville:400,400i,700&display=swap">
 </head>
 <body>
 
 <div class="transition-overlay" id="overlay"></div>
+<div class="home-preview">
+  <iframe src="index.html" tabindex="-1"></iframe>
+</div>
+
+<div class="page-wrapper" id="page-wrapper">
 
 <nav>
-  <a href="index.html" class="nav-logo" data-link>Vasily Alyokhin</a>
+  <a href="index.html" class="nav-logo" data-link>Vasily Alekhin</a>
   <div class="nav-right">
     <ul class="nav-filters">
       <li><a href="index.html" data-link>Work</a><span class="comma">,</span></li>
     </ul>
     <ul class="nav-about">
-      <li><a href="https://instagram.com/" target="_blank">Instagram</a><span class="comma">,</span></li>
-      <li><a href="https://t.me/" target="_blank">Telegram</a></li>
+      <li><a href="https://www.instagram.com/vasily.alekhin/" target="_blank">Instagram</a><span class="comma">,</span></li>
+      <li><a href="https://t.me/vasilyalehin" target="_blank">Telegram</a></li>
     </ul>
   </div>
 </nav>
@@ -157,7 +152,7 @@
   <a href="index.html" class="back-link reveal" data-link>Back</a>
 
   <div class="project-header reveal">
-    <h1 class="project-title" id="proj-title">Проект</h1>
+    <h1 class="project-title" id="proj-title">Project</h1>
     <div class="project-meta" id="proj-meta"></div>
   </div>
 
@@ -182,6 +177,8 @@
   </div>
 </div>
 
+</div><!-- /page-wrapper -->
+
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close">Close · Esc</button>
   <img id="lightbox-img" src="" alt="">
@@ -189,27 +186,96 @@
 
 <script src="_transitions.js"></script>
 <script>
-// Project data — ✏️ РЕДАКТИРУЙ ЗДЕСЬ
+// ✏️ РЕДАКТИРУЙ ЗДЕСЬ — blocks задаёт структуру страницы проекта
+// type: 'full'     — картинка на всю ширину (imgs: 1 фото)
+// type: 'carousel' — горизонтальная карусель (imgs: сколько угодно)
+// type: 'grid2x2'  — сетка 2×2 (imgs: ровно 4 фото)
+// type: '2col'     — две колонки (imgs: ровно 2 фото)
+// type: '3col'     — три колонки (imgs: ровно 3 фото)
+
 const projects = {
-  1:  { title: 'Проект 01', year: '2024', cat: '3D Mapping', sub: 'Architectural show', client: 'DreamLaser', tools: 'After Effects, Cinema 4D', imgs: ['','','',''] },
-  2:  { title: 'Проект 02', year: '2024', cat: '3D Mapping', sub: 'x DreamLaser', client: 'DreamLaser', tools: 'After Effects, Resolume', imgs: ['','',''] },
-  3:  { title: 'Проект 03', year: '2023', cat: '3D Mapping', sub: 'Outdoor', client: 'DreamLaser', tools: 'AE, C4D', imgs: ['',''] },
-  4:  { title: 'Проект 04', year: '2023', cat: '3D Mapping', sub: 'Event-шоу', client: 'Private client', tools: 'After Effects', imgs: ['','',''] },
-  5:  { title: 'Digital 01', year: '2023', cat: 'Digital', sub: 'After Effects', client: 'Personal project', tools: 'After Effects', imgs: ['',''] },
-  6:  { title: 'Digital 02', year: '2022', cat: 'Digital', sub: 'Generative visual', client: 'Personal project', tools: 'AE, Touch Designer', imgs: ['','',''] },
-  7:  { title: 'Render 01', year: '2022', cat: 'Daily', sub: 'Cinema 4D · Redshift', client: 'Personal project', tools: 'Cinema 4D, Redshift', imgs: ['',''] },
-  8:  { title: 'Render 02', year: '2021', cat: 'Daily', sub: 'Octane · C4D', client: 'Personal project', tools: 'Cinema 4D, Octane', imgs: ['','',''] },
-  9:  { title: 'Проект 05', year: '2023', cat: '3D Mapping', sub: 'Facade', client: 'DreamLaser', tools: 'AE, Resolume', imgs: ['',''] },
-  10: { title: 'Digital 03', year: '2022', cat: 'Digital', sub: 'Loop', client: 'Personal project', tools: 'After Effects', imgs: ['','',''] },
-  11: { title: 'Render 03', year: '2021', cat: 'Daily', sub: 'Cinema 4D', client: 'Personal project', tools: 'Cinema 4D', imgs: ['',''] },
-  12: { title: 'Проект 06', year: '2022', cat: '3D Mapping', sub: 'Architectural show', client: 'DreamLaser', tools: 'AE, C4D', imgs: ['','',''] },
-  13: { title: 'Digital 04', year: '2021', cat: 'Digital', sub: 'Ambient', client: 'Personal project', tools: 'After Effects', imgs: ['',''] },
-  14: { title: 'Render 04', year: '2022', cat: 'Daily', sub: 'Octane · C4D', client: 'Personal project', tools: 'C4D, Octane', imgs: ['','',''] },
-  15: { title: 'Проект 07', year: '2021', cat: '3D Mapping', sub: 'Outdoor', client: 'Private client', tools: 'AE, Resolume', imgs: ['',''] },
-  16: { title: '3D Render 01', year: '2024', cat: 'Daily', sub: 'Cinema 4D · Redshift', client: 'Personal project', tools: 'Cinema 4D, Redshift', imgs: ['',''] },
-  17: { title: '3D Render 02', year: '2023', cat: 'Daily', sub: 'Octane', client: 'Personal project', tools: 'C4D, Octane', imgs: ['','',''] },
-  18: { title: '3D Render 03', year: '2022', cat: 'Daily', sub: 'Cinema 4D', client: 'Personal project', tools: 'Cinema 4D', imgs: ['',''] },
-  19: { title: '3D Render 04', year: '2021', cat: 'Daily', sub: 'Redshift', client: 'Personal project', tools: 'C4D, Redshift', imgs: ['','',''] },
+  1: {
+    title: 'Color', year: '2025', cat: 'Stock', sub: 'Architectural show', client: 'Treedeo', tools: 'Redshift, Cinema 4D',
+    blocks: [
+      { type: 'full',     imgs: ['img/Color_Site/COLOR_18.jpg'] },
+      { type: 'carousel', imgs: ['img/Color_Site/COLOR_19.jpg','img/Color_Site/COLOR_14.jpg','img/Color_Site/COLOR_20.jpg','img/Color_Site/COLOR_03.jpg'] },
+      { type: 'grid2x2',  imgs: ['img/Color_Site/COLOR_09.jpg','img/Color_Site/COLOR_05.jpg','img/Color_Site/COLOR_08.jpg','img/Color_Site/COLOR_06.jpg'] },
+      { type: 'full',     imgs: ['img/Color_Site/COLOR_13.jpg'] },
+      { type: '3col',     imgs: ['img/Color_Site/COLOR_10.jpg','img/Color_Site/COLOR_11.jpg','img/Color_Site/COLOR_12.jpg'] },
+      { type: '2col',     imgs: ['img/Color_Site/COLOR_17.jpg','img/Color_Site/COLOR_18.jpg'] },
+      { type: 'full',     imgs: ['img/Color_Site/COLOR_07.jpg'] },
+    ]
+  },
+  2: {
+    title: 'Проект 02', year: '2024', cat: '3D Mapping', sub: 'x DreamLaser', client: 'DreamLaser', tools: 'After Effects, Resolume',
+    blocks: [
+      { type: 'full',     imgs: ['img/GLASS_site/GLASS_01.jpg'] },
+      { type: 'carousel', imgs: ['img/GLASS_site/GLASS_02.jpg','img/GLASS_site/GLASS_03.jpg','img/GLASS_site/GLASS_04.jpg','img/GLASS_site/GLASS_05.jpg','img/GLASS_site/GLASS_06.jpg','img/GLASS_site/GLASS_07.jpg'] },
+      { type: 'grid2x2',  imgs: ['img/GLASS_site/GLASS_08.jpg','img/GLASS_site/GLASS_09.jpg','img/GLASS_site/GLASS_10.jpg','img/GLASS_site/GLASS_11.jpg'] },
+      { type: 'full',     imgs: ['img/GLASS_site/GLASS_12.jpg'] },
+      { type: '3col',     imgs: ['img/GLASS_site/GLASS_13.jpg','img/GLASS_site/GLASS_14.jpg','img/GLASS_site/GLASS_15.jpg'] },
+      { type: '2col',     imgs: ['img/GLASS_site/GLASS_16.jpg','img/GLASS_site/GLASS_17.jpg'] },
+      { type: 'full',     imgs: ['img/GLASS_site/GLASS_18.jpg'] },
+      { type: 'carousel', imgs: ['img/GLASS_site/GLASS_19.jpg','img/GLASS_site/GLASS_20.jpg','img/GLASS_site/GLASS_21.jpg','img/GLASS_site/GLASS_22.jpg','img/GLASS_site/GLASS_23.jpg'] },
+      { type: 'grid2x2',  imgs: ['img/GLASS_site/GLASS_24.jpg','img/GLASS_site/GLASS_25.jpg','img/GLASS_site/GLASS_26.jpg','img/GLASS_site/GLASS_27.jpg'] },
+      { type: '3col',     imgs: ['img/GLASS_site/GLASS_28.jpg','img/GLASS_site/GLASS_29.jpg','img/GLASS_site/GLASS_30.jpg'] },
+    ]
+  },
+  3: {
+    title: 'Проект 03', year: '2023', cat: '3D Mapping', sub: 'Outdoor', client: 'DreamLaser', tools: 'AE, C4D',
+    blocks: [
+      { type: 'full',     imgs: ['img/Tex_Site/Tex_01.jpg'] },
+      { type: 'carousel', imgs: ['img/Tex_Site/Tex_02.jpg','img/Tex_Site/Tex_03.jpg','img/Tex_Site/Tex_04.jpg'] },
+      { type: '3col',     imgs: ['img/Tex_Site/Tex_05.jpg','img/Tex_Site/Tex_06.jpg','img/Tex_Site/Tex_07.jpg'] },
+    ]
+  },
+  4: {
+    title: 'Проект 04', year: '2023', cat: '3D Mapping', sub: 'Event-шоу', client: 'Private client', tools: 'After Effects',
+    blocks: [
+      { type: 'full',     imgs: ['img/TITLE_site/TITLE_01.jpg'] },
+      { type: 'carousel', imgs: ['img/TITLE_site/TITLE_02.jpg','img/TITLE_site/TITLE_03.jpg','img/TITLE_site/TITLE_04.jpg','img/TITLE_site/TITLE_05.jpg','img/TITLE_site/TITLE_06.jpg'] },
+      { type: 'grid2x2',  imgs: ['img/TITLE_site/TITLE_07.jpg','img/TITLE_site/TITLE_08.jpg','img/TITLE_site/TITLE_09.jpg','img/TITLE_site/TITLE_10.jpg'] },
+      { type: 'full',     imgs: ['img/TITLE_site/TITLE_11.jpg'] },
+      { type: '2col',     imgs: ['img/TITLE_site/TITLE_12.jpg','img/TITLE_site/TITLE_13.jpg'] },
+      { type: 'carousel', imgs: ['img/TITLE_site/TITLE_14.jpg','img/TITLE_site/TITLE_15.jpg','img/TITLE_site/TITLE_16.jpg','img/TITLE_site/TITLE_17.jpg'] },
+      { type: '3col',     imgs: ['img/TITLE_site/TITLE_18.jpg','img/TITLE_site/TITLE_19.jpg','img/TITLE_site/TITLE_20.jpg'] },
+      { type: '2col',     imgs: ['img/TITLE_site/TITLE_21.jpg','img/TITLE_site/TITLE_22.jpg'] },
+    ]
+  },
+  5: {
+    title: 'Digital 01', year: '2023', cat: 'Digital', sub: 'After Effects', client: 'Personal project', tools: 'After Effects',
+    blocks: [
+      { type: 'full',     imgs: ['img/WAVES_site/WAVES_01.jpg'] },
+      { type: 'carousel', imgs: ['img/WAVES_site/WAVES_02.jpg','img/WAVES_site/WAVES_03.jpg','img/WAVES_site/WAVES_04.jpg','img/WAVES_site/WAVES_05.jpg'] },
+      { type: 'grid2x2',  imgs: ['img/WAVES_site/WAVES_06.jpg','img/WAVES_site/WAVES_07.jpg','img/WAVES_site/WAVES_08.jpg','img/WAVES_site/WAVES_09.jpg'] },
+    ]
+  },
+  6: {
+    title: 'Digital 02', year: '2022', cat: 'Digital', sub: 'Generative visual', client: 'Personal project', tools: 'AE, Touch Designer',
+    blocks: [
+      { type: 'full',     imgs: ['img/Wood_site/WOOD_01.jpg'] },
+      { type: 'carousel', imgs: ['img/Wood_site/WOOD_02.jpg','img/Wood_site/WOOD_03.jpg','img/Wood_site/WOOD_04.jpg','img/Wood_site/WOOD_05.jpg','img/Wood_site/WOOD_06.jpg'] },
+      { type: 'grid2x2',  imgs: ['img/Wood_site/WOOD_07.jpg','img/Wood_site/WOOD_08.jpg','img/Wood_site/WOOD_09.jpg','img/Wood_site/WOOD_10.jpg'] },
+      { type: 'full',     imgs: ['img/Wood_site/WOOD_11.jpg'] },
+      { type: '3col',     imgs: ['img/Wood_site/WOOD_12.jpg','img/Wood_site/WOOD_13.jpg','img/Wood_site/WOOD_14.jpg'] },
+      { type: 'carousel', imgs: ['img/Wood_site/WOOD_15.jpg','img/Wood_site/WOOD_16.jpg','img/Wood_site/WOOD_17.jpg','img/Wood_site/WOOD_18.jpg'] },
+      { type: '2col',     imgs: ['img/Wood_site/WOOD_19.jpg','img/Wood_site/WOOD_20.jpg'] },
+      { type: 'full',     imgs: ['img/Wood_site/WOOD_21.jpg'] },
+    ]
+  },
+  7:  { title: 'Render 01', year: '2022', cat: 'Daily', sub: 'Cinema 4D · Redshift', client: 'Personal project', tools: 'Cinema 4D, Redshift', blocks: [{ type: 'full', imgs: [''] }] },
+  8:  { title: 'Render 02', year: '2021', cat: 'Daily', sub: 'Octane · C4D', client: 'Personal project', tools: 'Cinema 4D, Octane', blocks: [{ type: 'full', imgs: [''] }] },
+  9:  { title: 'Проект 05', year: '2023', cat: '3D Mapping', sub: 'Facade', client: 'DreamLaser', tools: 'AE, Resolume', blocks: [{ type: 'full', imgs: [''] }] },
+  10: { title: 'Digital 03', year: '2022', cat: 'Digital', sub: 'Loop', client: 'Personal project', tools: 'After Effects', blocks: [{ type: 'full', imgs: [''] }] },
+  11: { title: 'Render 03', year: '2021', cat: 'Daily', sub: 'Cinema 4D', client: 'Personal project', tools: 'Cinema 4D', blocks: [{ type: 'full', imgs: [''] }] },
+  12: { title: 'Проект 06', year: '2022', cat: '3D Mapping', sub: 'Architectural show', client: 'DreamLaser', tools: 'AE, C4D', blocks: [{ type: 'full', imgs: [''] }] },
+  13: { title: 'Digital 04', year: '2021', cat: 'Digital', sub: 'Ambient', client: 'Personal project', tools: 'After Effects', blocks: [{ type: 'full', imgs: [''] }] },
+  14: { title: 'Render 04', year: '2022', cat: 'Daily', sub: 'Octane · C4D', client: 'Personal project', tools: 'C4D, Octane', blocks: [{ type: 'full', imgs: [''] }] },
+  15: { title: 'Проект 07', year: '2021', cat: '3D Mapping', sub: 'Outdoor', client: 'Private client', tools: 'AE, Resolume', blocks: [{ type: 'full', imgs: [''] }] },
+  16: { title: '3D Render 01', year: '2024', cat: 'Daily', sub: 'Cinema 4D · Redshift', client: 'Personal project', tools: 'Cinema 4D, Redshift', blocks: [{ type: 'full', imgs: [''] }] },
+  17: { title: '3D Render 02', year: '2023', cat: 'Daily', sub: 'Octane', client: 'Personal project', tools: 'C4D, Octane', blocks: [{ type: 'full', imgs: [''] }] },
+  18: { title: '3D Render 03', year: '2022', cat: 'Daily', sub: 'Cinema 4D', client: 'Personal project', tools: 'Cinema 4D', blocks: [{ type: 'full', imgs: [''] }] },
+  19: { title: '3D Render 04', year: '2021', cat: 'Daily', sub: 'Redshift', client: 'Personal project', tools: 'C4D, Redshift', blocks: [{ type: 'full', imgs: [''] }] },
 };
 
 const params = new URLSearchParams(window.location.search);
@@ -219,78 +285,134 @@ const ids = Object.keys(projects).map(Number);
 const nextId = ids[(ids.indexOf(id) + 1) % ids.length];
 const next = projects[nextId];
 
-// Fill header
 document.getElementById('proj-title').textContent = p.title + ' (' + p.year + ')';
 document.getElementById('proj-meta').innerHTML =
   `<p><strong>${p.cat}</strong></p><p>${p.sub}</p><p style="margin-top:8px">Client: ${p.client}</p>`;
 document.getElementById('proj-details').innerHTML =
   `Year: ${p.year}<br>Category: ${p.cat}<br>Tools: ${p.tools}`;
-document.title = p.title + ' — Василий Алёхин';
+document.title = p.title + ' — Vasily Alekhin';
 
-// helpers
-function isVideo(src) { return /\.(mp4|webm|mov|m4v)(\?|$)/i.test(src); }
-
-function makeMedia(src) {
-  if (isVideo(src)) {
-    const wrap = document.createElement('div');
-    wrap.className = 'project-video-wrap';
-    const vid = document.createElement('video');
-    vid.className = 'project-video';
-    vid.src = src;
-    vid.autoplay = true;
-    vid.loop = true;
-    vid.muted = true;
-    vid.playsInline = true;
-    vid.setAttribute('playsinline', '');
-    // click to toggle sound
-    vid.addEventListener('click', () => {
-      vid.muted = !vid.muted;
-      const icon = wrap.querySelector('.sound-icon');
-      if (icon) icon.textContent = vid.muted ? '🔇' : '🔊';
-    });
-    const icon = document.createElement('span');
-    icon.className = 'sound-icon';
-    icon.textContent = '🔇';
-    wrap.appendChild(vid);
-    wrap.appendChild(icon);
-    return wrap;
-  } else {
-    const img = document.createElement('img');
-    img.className = 'project-img';
-    img.src = src;
-    img.alt = '';
-    img.onclick = () => openLightbox(src);
-    return img;
-  }
-}
-
-// Build media grid
-const layouts = [
-  ['cols-1'],
-  ['cols-2'],
-  ['cols-1','cols-2'],
-  ['cols-1','cols-3'],
-  ['cols-2-1','cols-2'],
-];
-const layout = layouts[Math.min(p.imgs.length - 1, layouts.length - 1)];
 const container = document.getElementById('proj-images');
 
-let imgIndex = 0;
-layout.forEach(cls => {
-  const count = cls === 'cols-1' ? 1 : cls === 'cols-2' ? 2 : cls === 'cols-3' ? 3 : cls === 'cols-2-1' ? 3 : 1;
-  const row = document.createElement('div');
-  row.className = 'img-row ' + cls;
-  for (let i = 0; i < count && imgIndex < p.imgs.length; i++, imgIndex++) {
-    row.appendChild(makeMedia(p.imgs[imgIndex]));
+function makeImg(src, zoomable) {
+  const img = document.createElement('img');
+  img.src = src; img.alt = '';
+  if (zoomable) img.onclick = () => openLightbox(src);
+  return img;
+}
+
+function makeCarousel(imgs) {
+  const wrap = document.createElement('div');
+  wrap.className = 'block-carousel';
+  const track = document.createElement('div');
+  track.className = 'carousel-track';
+  imgs.forEach(src => {
+    const img = makeImg(src, false);
+    track.appendChild(img);
+  });
+  wrap.appendChild(track);
+
+  // drag logic
+  let startX = 0, offset = 0, dragOffset = 0, dragging = false, moved = false;
+
+  track.addEventListener('mousedown', e => {
+    dragging = true; moved = false;
+    startX = e.clientX;
+    dragOffset = offset;
+    track.classList.add('is-dragging');
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    const dx = e.clientX - startX;
+    if (Math.abs(dx) > 4) moved = true;
+    const maxOffset = track.scrollWidth - wrap.clientWidth;
+    offset = Math.max(0, Math.min(dragOffset - dx, maxOffset));
+    track.style.transform = `translateX(-${offset}px)`;
+  });
+
+  window.addEventListener('mouseup', e => {
+    if (!dragging) return;
+    dragging = false;
+    track.classList.remove('is-dragging');
+    // открыть лайтбокс только если не тащили
+    if (!moved) {
+      const img = e.target.closest('img');
+      if (img) openLightbox(img.src);
+    }
+  });
+
+  return wrap;
+}
+
+(p.blocks || []).forEach(block => {
+  const imgs = (block.imgs || []).filter(s => s);
+  if (!imgs.length) return;
+
+  let el;
+  if (block.type === 'full') {
+    el = document.createElement('div');
+    el.className = 'block-full';
+    el.appendChild(makeImg(imgs[0], true));
+  } else if (block.type === 'carousel') {
+    el = makeCarousel(imgs);
+  } else if (block.type === 'grid2x2') {
+    el = document.createElement('div');
+    el.className = 'block-grid2x2';
+    const grid = document.createElement('div');
+    grid.className = 'grid2x2';
+    imgs.forEach(src => grid.appendChild(makeImg(src, true)));
+    el.appendChild(grid);
+  } else if (block.type === '2col') {
+    el = document.createElement('div');
+    el.className = 'block-2col';
+    const row = document.createElement('div');
+    row.className = 'row2col';
+    imgs.forEach(src => row.appendChild(makeImg(src, true)));
+    el.appendChild(row);
+  } else if (block.type === '3col') {
+    el = document.createElement('div');
+    el.className = 'block-3col';
+    const row = document.createElement('div');
+    row.className = 'row3col';
+    imgs.forEach(src => row.appendChild(makeImg(src, true)));
+    el.appendChild(row);
   }
-  if (row.children.length > 0) container.appendChild(row);
+  if (el) container.appendChild(el);
 });
 
-// Next project
+const nextHref = 'project.html?id=' + nextId;
 document.getElementById('next-title').textContent = next.title + ' (' + next.year + ')';
-document.getElementById('next-link').href = 'project.html?id=' + nextId;
+document.getElementById('next-link').href = nextHref;
 
-// Lightbox — images only
+// ── REVEAL HOME ON SCROLL ──
+const wrapper = document.getElementById('page-wrapper');
+let overscroll = 0;
+const THRESHOLD = 400;
+let navigating = false;
+
+window.addEventListener('wheel', e => {
+  const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 2;
+  if (!atBottom || navigating) { if (!atBottom) overscroll = 0; return; }
+  overscroll += e.deltaY;
+  const progress = Math.max(0, Math.min(overscroll / THRESHOLD, 1));
+  wrapper.style.transform = `translateY(-${progress * 80}px)`;
+  wrapper.style.opacity = 1 - progress * 0.3;
+  if (overscroll >= THRESHOLD) {
+    navigating = true;
+    wrapper.style.transition = 'transform 0.5s var(--ease), opacity 0.5s ease';
+    wrapper.style.transform = 'translateY(-100vh)';
+    wrapper.style.opacity = '0';
+    setTimeout(() => { window.location.href = 'index.html'; }, 500);
+  }
+}, { passive: true });
+
+window.addEventListener('scroll', () => {
+  const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 2;
+  if (!atBottom) { overscroll = 0; wrapper.style.transform = ''; wrapper.style.opacity = ''; }
+});
+
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').classList.add('open');
