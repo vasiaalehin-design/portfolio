@@ -38,13 +38,17 @@
   overflow: hidden;
   background: #f0f0f0;
   position: relative;
+  aspect-ratio: var(--ratio, 4/3);
 }
 .work-thumb img[src=""] {
   display: none;
 }
 .work-thumb img {
-  width: 100%; height: auto;
+  width: 100%;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.6s var(--ease), opacity 0.3s ease;
 }
 .work-card:hover .work-thumb img {
@@ -142,9 +146,7 @@
   <div class="nav-right">
     <ul class="nav-filters">
       <li><button class="active" onclick="filterWorks('all',this)">All</button><span class="comma">,</span></li>
-      <li><button onclick="filterWorks('3d-mapping',this)">3D Mapping</button><span class="comma">,</span></li>
-      <li><button onclick="filterWorks('digital',this)">Digital</button><span class="comma">,</span></li>
-      <li><button onclick="filterWorks('daily',this)">Daily</button></li>
+      <li><button onclick="filterWorks('digital',this)">Digital</button></li>
       <li><span class="sep">|</span></li>
     </ul>
     <ul class="nav-about">
@@ -158,78 +160,33 @@
 <div class="page">
   <div class="col-main">
     <div class="works-grid" id="works-grid">
-
-      <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=1" data-link>
-        <div class="work-thumb"><img src="img/Color_Site/COLOR_19.jpg" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Color</h3><p>Treedeo</p></div>
+      <a class="work-card reveal" data-cat="digital" href="project.html?id=1" data-link>
+        <div class="work-thumb" style="--ratio: 2/3"><img src="img/Color_Site/COLOR_19.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Color</h3><p>Treedeo · 2025</p></div>
       </a>
       <a class="work-card reveal" data-cat="digital" href="project.html?id=2" data-link>
-        <div class="work-thumb"><img src="img/GLASS_site/GLASS_05.jpg" alt="Project 2" loading="lazy"></div>
-        <div class="work-info"><h3>Digital 01 (2024)</h3><p>After Effects</p></div>
+        <div class="work-thumb" style="--ratio: 2/2"><img src="img/GLASS_site/GLASS_05.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Glass</h3><p>Treedeo · 2024</p></div>
       </a>
-      <a class="work-card reveal" data-cat="daily" href="project.html?id=3" data-link>
-        <div class="work-thumb"><img src="img/Tex_Site/Tex_03.jpg" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Daily 01 (2023)</h3><p>Cinema 4D</p></div>
+      <a class="work-card reveal" data-cat="digital" href="project.html?id=3" data-link>
+        <div class="work-thumb" style="--ratio: 15/10"><img src="img/Tex_Site/Tex_03.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Tex</h3><p>Treedeo · 2023</p></div>
       </a>
-      <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=4" data-link>
-        <div class="work-thumb"><img src="img/TITLE_site/TITLE_08.jpg" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Project 02 (2023)</h3><p>x DreamLaser</p></div>
+      <a class="work-card reveal" data-cat="digital" href="project.html?id=4" data-link>
+        <div class="work-thumb" style="--ratio: 4/5"><img src="img/TITLE_site/TITLE_21.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Title</h3><p>Treedeo · 2023</p></div>
       </a>
       <a class="work-card reveal" data-cat="digital" href="project.html?id=5" data-link>
-        <div class="work-thumb"><img src="img/WAVES_site/WAVES_04.jpg" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Digital 02 (2023)</h3><p>Generative visual</p></div>
+        <div class="work-thumb" style="--ratio: 4/3"><img src="img/WAVES_site/WAVES_09.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Waves</h3><p>Treedeo · 2023</p></div>
       </a>
-      <a class="work-card reveal" data-cat="daily" href="project.html?id=6" data-link>
-        <div class="work-thumb"><img src="img/Wood_site/WOOD_07.jpg" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Daily 02 (2022)</h3><p>Redshift · C4D</p></div>
+      <a class="work-card reveal" data-cat="digital" href="project.html?id=6" data-link>
+        <div class="work-thumb" style="--ratio: 4/3"><img src="img/Wood_site/WOOD_07.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Wood</h3><p>Treedeo · 2022</p></div>
       </a>
-      <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=7" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Project 03 (2022)</h3><p>Outdoor mapping</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="digital" href="project.html?id=8" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Digital 03 (2022)</h3><p>Motion loop</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="daily" href="project.html?id=9" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Daily 03 (2022)</h3><p>Octane · C4D</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=10" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Project 04 (2022)</h3><p>Live event</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="digital" href="project.html?id=11" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Digital 04 (2021)</h3><p>Ambient visual</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="daily" href="project.html?id=12" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Daily 04 (2021)</h3><p>Cinema 4D</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=13" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Project 05 (2021)</h3><p>Facade · DreamLaser</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="digital" href="project.html?id=14" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Digital 05 (2021)</h3><p>After Effects</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="daily" href="project.html?id=15" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Daily 05 (2020)</h3><p>Redshift render</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="3d-mapping" href="project.html?id=16" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Project 06 (2020)</h3><p>Architectural show</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="digital" href="project.html?id=17" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Digital 06 (2020)</h3><p>Motion design</p></div>
-      </a>
-      <a class="work-card reveal" data-cat="daily" href="project.html?id=18" data-link>
-        <div class="work-thumb"><img src="" alt="" loading="lazy"></div>
-        <div class="work-info"><h3>Daily 06 (2020)</h3><p>C4D · Octane</p></div>
+      <a class="work-card reveal" data-cat="digital" href="project.html?id=7" data-link>
+        <div class="work-thumb" style="--ratio: 4/3"><img src="img/Rainbow_site/Rainbow_05.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Rainbow</h3><p>Treedeo · 2022</p></div>
       </a>
 
     </div>
