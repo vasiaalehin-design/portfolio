@@ -143,7 +143,7 @@
 <div class="transition-overlay" id="overlay"></div>
 
 <nav>
-  <a href="index.html" class="nav-logo" data-link>Vasily Alekhin</a>
+  <a href="/" class="nav-logo" data-link>Vasily Alekhin</a>
   <div class="nav-right">
     <ul class="nav-filters">
       <li><button class="active" onclick="filterWorks('all',this)">All</button><span class="comma">,</span></li>
@@ -234,6 +234,15 @@ function toggleAbout(e) {
     setTimeout(() => { panel.style.display = 'none'; }, 400);
   }
 }
+</script>
+
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script>
+const btn = document.getElementById('back-to-top');
+window.addEventListener('scroll', () => {
+  btn.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
 </script>
 </body>
 </html>
