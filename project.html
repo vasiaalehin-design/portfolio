@@ -314,36 +314,42 @@ function makeCarousel(imgs) {
   });
   wrap.appendChild(track);
 
-  // drag logic
+  // drag + touch logic
   let startX = 0, offset = 0, dragOffset = 0, dragging = false, moved = false;
 
-  track.addEventListener('mousedown', e => {
+  function onStart(clientX) {
     dragging = true; moved = false;
-    startX = e.clientX;
+    startX = clientX;
     dragOffset = offset;
     track.classList.add('is-dragging');
-    e.preventDefault();
-  });
-
-  window.addEventListener('mousemove', e => {
+  }
+  function onMove(clientX) {
     if (!dragging) return;
-    const dx = e.clientX - startX;
+    const dx = clientX - startX;
     if (Math.abs(dx) > 4) moved = true;
     const maxOffset = track.scrollWidth - wrap.clientWidth;
     offset = Math.max(0, Math.min(dragOffset - dx, maxOffset));
     track.style.transform = `translateX(-${offset}px)`;
-  });
-
-  window.addEventListener('mouseup', e => {
+  }
+  function onEnd(target) {
     if (!dragging) return;
     dragging = false;
     track.classList.remove('is-dragging');
-    // открыть лайтбокс только если не тащили
-    if (!moved) {
-      const img = e.target.closest('img');
+    if (!moved && target) {
+      const img = target.closest('img');
       if (img) openLightbox(img.src);
     }
-  });
+  }
+
+  // Mouse
+  track.addEventListener('mousedown', e => { onStart(e.clientX); e.preventDefault(); });
+  window.addEventListener('mousemove', e => onMove(e.clientX));
+  window.addEventListener('mouseup', e => onEnd(e.target));
+
+  // Touch
+  track.addEventListener('touchstart', e => { onStart(e.touches[0].clientX); }, { passive: true });
+  track.addEventListener('touchmove', e => { onMove(e.touches[0].clientX); }, { passive: true });
+  track.addEventListener('touchend', e => { onEnd(e.changedTouches[0].target); });
 
   return wrap;
 }
