@@ -1,6 +1,5 @@
 const projects = {
-  'color': {
-    title: 'Color', year: '2025', cat: 'Digital', sub: 'Stock project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
+  'color':      { url: 'digital/color',      title: 'Color',      year: '2025', cat: 'Digital',  sub: 'Stock project',   client: 'Treedeo',   desc: '',
     blocks: [
       { type: 'full',     imgs: ['img/Color_Site/COLOR_18.jpg'] },
       { type: 'carousel', imgs: ['img/Color_Site/COLOR_19.jpg','img/Color_Site/COLOR_14.jpg','img/Color_Site/COLOR_20.jpg','img/Color_Site/COLOR_03.jpg'] },
@@ -9,10 +8,8 @@ const projects = {
       { type: '3col',     imgs: ['img/Color_Site/COLOR_10.jpg','img/Color_Site/COLOR_11.jpg','img/Color_Site/COLOR_12.jpg'] },
       { type: '2col',     imgs: ['img/Color_Site/COLOR_17.jpg','img/Color_Site/COLOR_18.jpg'] },
       { type: 'full',     imgs: ['img/Color_Site/COLOR_07.jpg'] },
-    ]
-  },
-  'glass': {
-    title: 'Glass', year: '2024', cat: 'Digital', sub: 'Personal project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
+    ]},
+  'glass':      { url: 'digital/glass',      title: 'Glass',      year: '2024', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
     blocks: [
       { type: 'full',     imgs: ['img/GLASS_site/GLASS_01.jpg'] },
       { type: 'carousel', imgs: ['img/GLASS_site/GLASS_02.jpg','img/GLASS_site/GLASS_03.jpg','img/GLASS_site/GLASS_04.jpg','img/GLASS_site/GLASS_05.jpg','img/GLASS_site/GLASS_07.jpg'] },
@@ -24,19 +21,15 @@ const projects = {
       { type: 'carousel', imgs: ['img/GLASS_site/GLASS_19.jpg','img/GLASS_site/GLASS_20.jpg','img/GLASS_site/GLASS_21.jpg'] },
       { type: '2col',     imgs: ['img/GLASS_site/GLASS_22.jpg','img/GLASS_site/GLASS_23.jpg'] },
       { type: 'full',     imgs: ['img/GLASS_site/GLASS_20.jpg'] },
-    ]
-  },
-  'tex': {
-    title: 'Tex', year: '2023', cat: 'Digital', sub: 'Personal project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
+    ]},
+  'tex':        { url: 'digital/tex',        title: 'Tex',        year: '2023', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
     blocks: [
       { type: 'full',  imgs: ['img/Tex_Site/Tex_04.jpg'] },
       { type: '2col',  imgs: ['img/Tex_Site/Tex_02.jpg','img/Tex_Site/Tex_03.jpg'] },
       { type: '2col',  imgs: ['img/Tex_Site/Tex_05.jpg','img/Tex_Site/Tex_06.jpg'] },
       { type: 'full',  imgs: ['img/Tex_Site/Tex_07.jpg'] },
-    ]
-  },
-  'title': {
-    title: 'Title', year: '2023', cat: 'Digital', sub: 'Personal project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
+    ]},
+  'title':      { url: 'digital/title',      title: 'Title',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
     blocks: [
       { type: 'full',     imgs: ['img/TITLE_site/TITLE_13.jpg'] },
       { type: 'carousel', imgs: ['img/TITLE_site/TITLE_19.jpg','img/TITLE_site/TITLE_20.jpg','img/TITLE_site/TITLE_17.jpg','img/TITLE_site/TITLE_21.jpg','img/TITLE_site/TITLE_06.jpg'] },
@@ -44,49 +37,40 @@ const projects = {
       { type: 'full',     imgs: ['img/TITLE_site/TITLE_22.jpg'] },
       { type: '2col',     imgs: ['img/TITLE_site/TITLE_12.jpg','img/TITLE_site/TITLE_01.jpg'] },
       { type: 'full',     imgs: ['img/TITLE_site/TITLE_14.jpg'] },
-    ]
-  },
-  'waves': {
-    title: 'Waves', year: '2023', cat: 'Digital', sub: 'Personal project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
+    ]},
+  'waves':      { url: 'digital/waves',      title: 'Waves',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
     blocks: [
       { type: 'full',  imgs: ['img/WAVES_site/WAVES_01.jpg'] },
       { type: '2col',  imgs: ['img/WAVES_site/WAVES_06.jpg','img/WAVES_site/WAVES_03.jpg'] },
       { type: 'full',  imgs: ['img/WAVES_site/WAVES_09.jpg'] },
       { type: '2col',  imgs: ['img/WAVES_site/WAVES_07.jpg','img/WAVES_site/WAVES_08.jpg'] },
-    ]
-  },
-  'rainbow': {
-    title: 'Rainbow', year: '2022', cat: 'Digital', sub: 'Personal project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
+    ]},
+  'rainbow':    { url: 'digital/rainbow',    title: 'Rainbow',    year: '2022', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
     blocks: [
       { type: 'full',     imgs: ['img/Rainbow_site/Rainbow_01.jpg'] },
       { type: 'carousel', imgs: ['img/Rainbow_site/Rainbow_25.jpg','img/Rainbow_site/Rainbow_26.jpg','img/Rainbow_site/Rainbow_27.jpg','img/Rainbow_site/Rainbow_28.jpg'] },
       { type: 'grid2x2',  imgs: ['img/Rainbow_site/Rainbow_07.jpg','img/Rainbow_site/Rainbow_08.jpg','img/Rainbow_site/Rainbow_09.jpg','img/Rainbow_site/Rainbow_10.jpg'] },
       { type: '2col',     imgs: ['img/Rainbow_site/Rainbow_05.jpg','img/Rainbow_site/Rainbow_06.jpg'] },
       { type: 'full',     imgs: ['img/Rainbow_site/Rainbow_02.jpg'] },
-    ]
-  },
-  'wood': {
-    title: 'Wood', year: '2022', cat: 'Digital', sub: 'Personal project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
+    ]},
+  'wood':       { url: 'digital/wood',       title: 'Wood',       year: '2022', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
     blocks: [
       { type: 'full',  imgs: ['img/Wood_site/WOOD_01.jpg'] },
       { type: '2col',  imgs: ['img/Wood_site/WOOD_06.jpg','img/Wood_site/WOOD_05.jpg'] },
       { type: 'full',  imgs: ['img/Wood_site/WOOD_09.jpg'] },
       { type: '2col',  imgs: ['img/Wood_site/WOOD_07.jpg','img/Wood_site/WOOD_08.jpg'] },
       { type: 'full',  imgs: ['img/Wood_site/WOOD_21.jpg'] },
-    ]
-  },
-  'mapping-01': {
-    title: 'Mapping 01', year: '2024', cat: 'Mapping', sub: 'Commercial', client: 'DreamLaser', tools: 'TouchDesigner',
+    ]},
+  'mapping-01': { url: 'mapping/mapping-01', title: 'Mapping 01', year: '2024', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '',
     blocks: [
       { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_Sanddunes_stillframe.jpg'] },
       { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_Sanddunes_Led_GEO.gif'] },
       { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes_Led_Smoke.gif'] },
       { type: '2col',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes_setup.jpg','img/Land_cruiser_site/sc_06_sanddunes_setup_2.jpg'] },
       { type: 'full',  imgs: ['img/Land_cruiser_site/2023_02_06_19_38_15.gif'] },
-    ]
-  },
-  'mapping-02': { title: 'Mapping 02', year: '2023', cat: 'Mapping', sub: 'Commercial', client: 'DreamLaser', tools: 'TouchDesigner', blocks: [] },
-  'mapping-03': { title: 'Mapping 03', year: '2023', cat: 'Mapping', sub: 'Commercial', client: 'DreamLaser', tools: 'TouchDesigner', blocks: [] },
-  'mapping-04': { title: 'Mapping 04', year: '2022', cat: 'Mapping', sub: 'Commercial', client: 'DreamLaser', tools: 'TouchDesigner', blocks: [] },
-  'mapping-05': { title: 'Mapping 05', year: '2022', cat: 'Mapping', sub: 'Commercial', client: 'DreamLaser', tools: 'TouchDesigner', blocks: [] },
+    ]},
+  'mapping-02': { url: 'mapping/mapping-02', title: 'Mapping 02', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '', blocks: [] },
+  'mapping-03': { url: 'mapping/mapping-03', title: 'Mapping 03', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '', blocks: [] },
+  'mapping-04': { url: 'mapping/mapping-04', title: 'Mapping 04', year: '2022', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '', blocks: [] },
+  'mapping-05': { url: 'mapping/mapping-05', title: 'Mapping 05', year: '2022', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '', blocks: [] },
 };
