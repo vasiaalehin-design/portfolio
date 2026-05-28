@@ -147,11 +147,9 @@
 
 <script src="/projects.js"></script>
 <script>
-  // Определяем какой проект показывать по URL
-  const path = window.location.pathname.replace(/\/$/, '');
-  // path будет типа /digital/color или /mapping/mapping-01
-  const parts = path.split('/');
-  const id = parts[parts.length - 1];
+  // Определяем какой проект показывать по ?id=
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
 
   const idx = PROJECTS.findIndex(p => p.id === id);
   const project = PROJECTS[idx];
