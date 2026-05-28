@@ -3,430 +3,168 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project — Vasily Alekhin</title>
-<meta name="description" content="Motion design project by Vasily Alekhin.">
+<title>Vasily Alekhin — Motion Designer</title>
+<meta name="description" content="Motion designer specialising in projection mapping, 3D and digital art. Previously at DreamLaser.">
 <meta name="robots" content="index, follow">
+<meta property="og:title" content="Vasily Alekhin — Motion Designer">
+<meta property="og:description" content="Projection mapping, 3D, digital art.">
+<meta property="og:type" content="website">
 <meta name="theme-color" content="#faf9f7">
 <link rel="icon" type="image/png" href="/VA.png">
-<link rel="stylesheet" href="../_shared.css">
+<style>:root{--bg:#faf9f7}</style>
+<link rel="stylesheet" href="_shared.css">
 <style>
-.project-page { padding-top: 42px; padding-bottom: 100px; }
-
-.project-header {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 2rem;
-  padding: 40px 30px 32px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 40px;
-}
-.project-title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 0.95;
-  text-transform: uppercase;
-}
-.project-meta { text-align: right; }
-.project-meta p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; color: var(--muted); line-height: 1.7; }
-.project-meta p strong { color: var(--text); font-weight: 400; }
-
-/* ── IMAGE BLOCKS ── */
-.project-images { display: flex; flex-direction: column; gap: 30px; }
-
-/* Full width */
-.block-full { padding: 0 30px; }
-.block-full img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: opacity 0.3s ease; }
-.block-full img:hover { opacity: 0.92; }
-
-/* Carousel */
-.block-carousel { overflow: hidden; padding: 0 30px; }
-.carousel-track {
-  display: flex;
-  gap: 30px;
-  user-select: none;
-  transition: transform 0.05s linear;
-}
-.carousel-track.is-dragging { cursor: grabbing; }
-.carousel-track img {
-  flex-shrink: 0;
-  height: 420px;
-  width: auto;
-  display: block;
-  cursor: grab;
-  transition: opacity 0.3s ease;
-}
-.carousel-track img:hover { opacity: 0.92; }
-
-/* 2x2 grid */
-.block-grid2x2 { padding: 0 30px; }
-.grid2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-.grid2x2 img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: opacity 0.3s ease; }
-.grid2x2 img:hover { opacity: 0.92; }
-
-/* 2 col row */
-.block-2col { padding: 0 30px; }
-.row2col { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-.row2col img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: opacity 0.3s ease; }
-.row2col img:hover { opacity: 0.92; }
-
-/* 3 col row */
-.block-3col { padding: 0 30px; }
-.row3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; }
-.row3col img { width: 100%; height: auto; display: block; cursor: zoom-in; transition: opacity 0.3s ease; }
-.row3col img:hover { opacity: 0.92; }
-
-.project-desc {
-  margin-top: 48px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  padding: 32px 30px 0;
-  border-top: 1px solid var(--border);
-}
-.project-desc h3 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-.project-desc p { font-size: 13px; line-height: 1.85; color: #444; }
-
-.back-link {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: 11px; color: var(--muted); text-decoration: none;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  margin: 60px 0 0 30px; transition: color .2s; display: block;
-}
-.back-link:hover { color: var(--text); }
-.back-link::before { content: '← '; }
-
-.next-project { display: flex; justify-content: flex-end; margin-top: 80px; padding: 32px 30px 0; border-top: 1px solid var(--border); }
-.next-link { text-decoration: none; color: var(--text); text-align: right; }
-.next-link span { display: block; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-.next-link h3 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; transition: opacity .2s; }
-.next-link:hover h3 { opacity: 0.5; }
-
-/* reveal home */
-.home-preview { position: fixed; bottom: 0; left: 0; right: 0; height: 100vh; z-index: 0; overflow: hidden; }
-.home-preview iframe { width: 100%; height: 100%; border: none; pointer-events: none; }
-.project-page { position: relative; z-index: 1; background: var(--bg); }
-nav { z-index: 10; }
-.page-wrapper { position: relative; z-index: 1; background: var(--bg); will-change: transform; }
-
-.lightbox { display: none; position: fixed; inset: 0; background: rgba(250,249,247,0.97); z-index: 999; align-items: center; justify-content: center; }
-.lightbox.open { display: flex; }
-.lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
-.lightbox-close { position: fixed; top: 18px; right: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); cursor: pointer; background: none; border: none; }
-.lightbox-close:hover { color: var(--text); }
-
-@media (max-width: 700px) {
-  .project-header { grid-template-columns: 1fr; padding: 30px 20px 24px; }
-  .project-meta { text-align: left; }
-  .grid2x2, .row2col, .row3col { grid-template-columns: 1fr; }
-  .carousel-track img { height: 260px; }
-  .project-desc { grid-template-columns: 1fr; gap: 24px; padding: 24px 30px 0; }
-  .next-project { padding: 24px 30px 0; }
-}
-</style><link rel="stylesheet" href="https://fonts.bunny.net/css?family=libre-baskerville:400,400i,700&display=swap">
+.page { padding-top: 42px; min-height: 100vh; }
+.col-main { padding-bottom: 100px; }
+.works-grid { columns: 3; column-gap: 30px; padding: 0 30px; }
+.work-card { break-inside: avoid; margin-bottom: 30px; cursor: pointer; display: block; text-decoration: none; color: inherit; }
+.work-thumb { width: 100%; overflow: hidden; background: #f0f0f0; position: relative; aspect-ratio: var(--ratio, 4/3); }
+.work-thumb img[src=""] { display: none; }
+.work-thumb img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; transition: transform 0.6s var(--ease), opacity 0.3s ease; }
+.work-card:hover .work-thumb img { transform: scale(1.03); opacity: 0.85; }
+.work-info { padding: 9px 0 4px; }
+.work-info h3 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; font-weight: 400; line-height: 1.4; margin-bottom: 3px; }
+.work-info p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; color: var(--muted); }
+.about-overlay { display: none; position: fixed; top: 42px; right: 0; bottom: 0; width: 320px; background: #fff; border-left: 1px solid var(--border); z-index: 90; overflow-y: auto; padding: 32px 28px 60px; transform: translateX(100%); transition: transform 0.4s var(--ease); }
+.about-overlay.open { display: block; transform: translateX(0); }
+.about-sec { margin-bottom: 32px; }
+.about-sec h4 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.about-sec p { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; line-height: 1.8; color: #444; font-weight: 300; }
+.about-sec p strong { color: var(--text); font-weight: 400; }
+.contact-list { list-style: none; }
+.contact-list a { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--border); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; color: #555; text-decoration: none; transition: color .15s; }
+.contact-list a:hover { color: var(--text); }
+.contact-list a::after { content: '→'; color: #ccc; }
+@media (max-width: 900px) { .works-grid { columns: 2; column-gap: 20px; padding: 0 20px; } .about-overlay { width: 100%; } }
+@media (max-width: 500px) { .works-grid { columns: 1; } }
+</style>
+<link rel="stylesheet" href="https://fonts.bunny.net/css?family=libre-baskerville:400,400i,700&display=swap">
 </head>
 <body>
 
 <div class="transition-overlay" id="overlay"></div>
-<div class="home-preview">
-  <iframe src="index.html" tabindex="-1"></iframe>
-</div>
-
-<div class="page-wrapper" id="page-wrapper">
 
 <nav>
   <a href="/" class="nav-logo" data-link>Vasily Alekhin</a>
   <div class="nav-right">
     <ul class="nav-filters">
-      <li><a href="/" data-link>Work</a><span class="comma">,</span></li>
+      <li><button class="active" onclick="filterWorks('all',this)">All</button><span class="comma">,</span></li>
+      <li><button onclick="filterWorks('digital',this)">Digital</button><span class="comma">,</span></li>
+      <li><button onclick="filterWorks('mapping',this)">Mapping</button></li>
+      <li><span class="sep">|</span></li>
     </ul>
     <ul class="nav-about">
+      <li><a href="#" onclick="toggleAbout(event)">About</a><span class="comma">,</span></li>
       <li><a href="https://www.instagram.com/vasily.alekhin/" target="_blank">Instagram</a><span class="comma">,</span></li>
       <li><a href="https://t.me/vasilyalehin" target="_blank">Telegram</a></li>
     </ul>
   </div>
 </nav>
 
-<div class="project-page">
-  <a href="/" class="back-link reveal" data-link>Back</a>
+<div class="page">
+  <div class="col-main">
+    <div class="works-grid" id="works-grid">
 
-  <div class="project-header reveal">
-    <h1 class="project-title" id="proj-title">Project</h1>
-    <div class="project-meta" id="proj-meta"></div>
-  </div>
+      <a class="work-card reveal" data-cat="digital" href="/digital/color" data-link>
+        <div class="work-thumb" style="--ratio: 2/3"><img src="img/Color_Site/COLOR_19.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Color</h3><p>Treedeo · 2025</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="digital" href="/digital/waves" data-link>
+        <div class="work-thumb" style="--ratio: 4/3"><img src="img/WAVES_site/WAVES_09.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Waves</h3><p>Treedeo · 2023</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="digital" href="/digital/glass" data-link>
+        <div class="work-thumb" style="--ratio: 2/2"><img src="img/GLASS_site/GLASS_20.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Glass</h3><p>Treedeo · 2024</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="digital" href="/digital/title" data-link>
+        <div class="work-thumb" style="--ratio: 4/5"><img src="img/TITLE_site/TITLE_21.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Title</h3><p>Treedeo · 2023</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="digital" href="/digital/wood" data-link>
+        <div class="work-thumb" style="--ratio: 4/3"><img src="img/Wood_site/WOOD_01.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Wood</h3><p>Treedeo · 2022</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="digital" href="/digital/rainbow" data-link>
+        <div class="work-thumb" style="--ratio: 3/5"><img src="img/Rainbow_site/Rainbow_27.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Rainbow</h3><p>Treedeo · 2022</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="digital" href="/digital/tex" data-link>
+        <div class="work-thumb" style="--ratio: 15/10"><img src="img/Tex_Site/Tex_03.jpg" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Tex</h3><p>Treedeo · 2023</p></div>
+      </a>
 
-  <div class="project-images reveal" id="proj-images"></div>
+      <a class="work-card reveal" data-cat="mapping" href="/mapping/mapping-01" data-link>
+        <div class="work-thumb" style="--ratio: 4/3"><img src="" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Mapping 01</h3><p>DreamLaser · 2024</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="mapping" href="/mapping/mapping-02" data-link>
+        <div class="work-thumb" style="--ratio: 3/4"><img src="" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Mapping 02</h3><p>DreamLaser · 2023</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="mapping" href="/mapping/mapping-03" data-link>
+        <div class="work-thumb" style="--ratio: 4/3"><img src="" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Mapping 03</h3><p>DreamLaser · 2023</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="mapping" href="/mapping/mapping-04" data-link>
+        <div class="work-thumb" style="--ratio: 16/9"><img src="" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Mapping 04</h3><p>DreamLaser · 2022</p></div>
+      </a>
+      <a class="work-card reveal" data-cat="mapping" href="/mapping/mapping-05" data-link>
+        <div class="work-thumb" style="--ratio: 4/3"><img src="" alt="" loading="lazy"></div>
+        <div class="work-info"><h3>Mapping 05</h3><p>DreamLaser · 2022</p></div>
+      </a>
 
-  <div class="project-desc reveal">
-    <div>
-      <h3>About the project</h3>
-      <p id="proj-desc">Project description. Tell about the task, process and result. What was interesting about this work, which tools you used, who you collaborated with.</p>
     </div>
-    <div>
-      <h3>Details</h3>
-      <p id="proj-details"></p>
-    </div>
-  </div>
-
-  <div class="next-project reveal">
-    <a href="#" class="next-link" id="next-link" data-link>
-      <span>Next project</span>
-      <h3 id="next-title">—</h3>
-    </a>
   </div>
 </div>
 
-</div><!-- /page-wrapper -->
-
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close">Close · Esc</button>
-  <img id="lightbox-img" src="" alt="">
+<div id="about-panel" class="about-overlay">
+  <div class="about-sec">
+    <h4>Motion Designer</h4>
+    <p>4 years in the field. Specialising in <strong>projection mapping</strong> on buildings and large-scale architectural objects. Previously at <strong>DreamLaser</strong> studio.</p>
+  </div>
+  <div class="about-sec">
+    <h4>Contact</h4>
+    <ul class="contact-list">
+      <li><a href="mailto:vasiaalehin@gmail.com">Email</a></li>
+      <li><a href="https://t.me/vasilyalehin" target="_blank">Telegram</a></li>
+      <li><a href="https://www.instagram.com/vasily.alekhin/" target="_blank">Instagram</a></li>
+      <li><a href="https://www.behance.net/vasiaalekhin" target="_blank">Behance</a></li>
+    </ul>
+  </div>
 </div>
 
-<script src="../_transitions.js"></script>
+<script src="_transitions.js"></script>
 <script>
-// ✏️ РЕДАКТИРУЙ ЗДЕСЬ — blocks задаёт структуру страницы проекта
-// type: 'full'     — картинка на всю ширину (imgs: 1 фото)
-// type: 'carousel' — горизонтальная карусель (imgs: сколько угодно)
-// type: 'grid2x2'  — сетка 2×2 (imgs: ровно 4 фото)
-// type: '2col'     — две колонки (imgs: ровно 2 фото)
-// type: '3col'     — три колонки (imgs: ровно 3 фото)
-
-const projects = {
-  1: {
-    title: 'Color', year: '2025', cat: 'Digital', sub: 'Stock project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
-    blocks: [
-      { type: 'full',     imgs: ['../img/Color_Site/COLOR_18.jpg'] },
-      { type: 'carousel', imgs: ['../img/Color_Site/COLOR_19.jpg','../img/Color_Site/COLOR_14.jpg','../img/Color_Site/COLOR_20.jpg','../img/Color_Site/COLOR_03.jpg'] },
-      { type: 'grid2x2',  imgs: ['../img/Color_Site/COLOR_09.jpg','../img/Color_Site/COLOR_05.jpg','../img/Color_Site/COLOR_08.jpg','../img/Color_Site/COLOR_06.jpg'] },
-      { type: 'full',     imgs: ['../img/Color_Site/COLOR_13.jpg'] },
-      { type: '3col',     imgs: ['../img/Color_Site/COLOR_10.jpg','../img/Color_Site/COLOR_11.jpg','../img/Color_Site/COLOR_12.jpg'] },
-      { type: '2col',     imgs: ['../img/Color_Site/COLOR_17.jpg','../img/Color_Site/COLOR_18.jpg'] },
-      { type: 'full',     imgs: ['../img/Color_Site/COLOR_07.jpg'] },
-    ]
-  },
-  2: {
-    title: 'Glass', year: '2024', cat: 'Digital', sub: 'Stock project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
-    blocks: [
-      { type: 'full',     imgs: ['../img/GLASS_site/GLASS_01.jpg'] },
-      { type: 'carousel', imgs: ['../img/GLASS_site/GLASS_02.jpg','../img/GLASS_site/GLASS_03.jpg','../img/GLASS_site/GLASS_04.jpg','../img/GLASS_site/GLASS_05.jpg','../img/GLASS_site/GLASS_07.jpg'] },
-      { type: 'grid2x2',  imgs: ['../img/GLASS_site/GLASS_08.jpg','../img/GLASS_site/GLASS_09.jpg','../img/GLASS_site/GLASS_10.jpg','../img/GLASS_site/GLASS_11.jpg'] },
-      { type: 'full',     imgs: ['../img/GLASS_site/GLASS_12.jpg'] },
-      { type: '3col',     imgs: ['../img/GLASS_site/GLASS_13.jpg','../img/GLASS_site/GLASS_14.jpg','../img/GLASS_site/GLASS_15.jpg'] },
-      { type: '2col',     imgs: ['../img/GLASS_site/GLASS_16.jpg','../img/GLASS_site/GLASS_17.jpg'] },
-      { type: 'full',     imgs: ['../img/GLASS_site/GLASS_18.jpg'] },
-      { type: 'carousel', imgs: ['../img/GLASS_site/GLASS_19.jpg','../img/GLASS_site/GLASS_20.jpg','../img/GLASS_site/GLASS_21.jpg',] },
-      { type: '2col',     imgs: ['../img/GLASS_site/GLASS_22.jpg','../img/GLASS_site/GLASS_23.jpg',] },
-      { type: 'full',     imgs: ['../img/GLASS_site/GLASS_20.jpg'] },
-    ]
-  },
-  3: {
-    title: 'Tex', year: '2023', cat: 'Digital', sub: 'Stock project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
-    blocks: [
-      { type: 'full',     imgs: ['../img/Tex_Site/Tex_04.jpg'] },
-      { type: '2col',     imgs: ['../img/Tex_Site/Tex_02.jpg','../img/Tex_Site/Tex_03.jpg'] },
-      { type: '2col',     imgs: ['../img/Tex_Site/Tex_05.jpg','../img/Tex_Site/Tex_06.jpg'] },  
-      { type: 'full',     imgs: ['../img/Tex_Site/Tex_07.jpg'] },
-    ]
-  },
-  4: {
-    title: 'Title', year: '2023', cat: 'Digital', sub: 'Stock project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
-    blocks: [
-      { type: 'full',     imgs: ['../img/TITLE_site/TITLE_13.jpg'] },
-      { type: 'carousel', imgs: ['../img/TITLE_site/TITLE_19.jpg','../img/TITLE_site/TITLE_20.jpg','../img/TITLE_site/TITLE_17.jpg','../img/TITLE_site/TITLE_21.jpg','../img/TITLE_site/TITLE_06.jpg'] },
-      { type: 'grid2x2',  imgs: ['../img/TITLE_site/TITLE_07.jpg','../img/TITLE_site/TITLE_08.jpg','../img/TITLE_site/TITLE_09.jpg','../img/TITLE_site/TITLE_10.jpg'] },
-      { type: 'full',     imgs: ['../img/TITLE_site/TITLE_22.jpg'] },
-      { type: '2col',     imgs: ['../img/TITLE_site/TITLE_12.jpg','../img/TITLE_site/TITLE_01.jpg'] },
-      { type: 'full',     imgs: ['../img/TITLE_site/TITLE_14.jpg'] },
-      { type: '3col',     imgs: ['../img/TITLE_site/TITLE_18.jpg','../img/TITLE_site/TITLE_19.jpg','../img/TITLE_site/TITLE_20.jpg'] },
-      { type: '2col',     imgs: ['../img/TITLE_site/TITLE_16.jpg','../img/TITLE_site/TITLE_15.jpg'] },
-    ]
-  },
-  5: {
-    title: 'Waves', year: '2023', cat: 'Digital', sub: 'Stock project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
-    blocks: [
-      { type: 'full',     imgs: ['../img/WAVES_site/WAVES_01.jpg'] },
-      { type: 'full',     imgs: ['../img/WAVES_site/WAVES_06.jpg'] },
-      { type: 'carousel', imgs: ['../img/WAVES_site/WAVES_02.jpg','../img/WAVES_site/WAVES_03.jpg','../img/WAVES_site/WAVES_04.jpg'] },
-      { type: '2col',     imgs: ['../img/WAVES_site/WAVES_07.jpg','../img/WAVES_site/WAVES_08.jpg'] },
-      { type: 'full',     imgs: ['../img/WAVES_site/WAVES_09.jpg'] },
-    ]
-  },
-  6: {
-    title: 'Wood', year: '2022', cat: 'Digital', sub: 'Stock project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
-    blocks: [
-      { type: 'full',     imgs: ['../img/Wood_site/WOOD_01.jpg'] },
-      { type: 'carousel', imgs: ['../img/Wood_site/WOOD_02.jpg','../img/Wood_site/WOOD_03.jpg','../img/Wood_site/WOOD_04.jpg','../img/Wood_site/WOOD_05.jpg','../img/Wood_site/WOOD_06.jpg'] },
-      { type: 'grid2x2',  imgs: ['../img/Wood_site/WOOD_07.jpg','../img/Wood_site/WOOD_08.jpg','../img/Wood_site/WOOD_09.jpg','../img/Wood_site/WOOD_10.jpg'] },
-      { type: 'full',     imgs: ['../img/Wood_site/WOOD_19.jpg'] },
-      { type: 'carousel', imgs: ['../img/Wood_site/WOOD_15.jpg','../img/Wood_site/WOOD_16.jpg','../img/Wood_site/WOOD_17.jpg','../img/Wood_site/WOOD_18.jpg'] },
-      { type: 'full',     imgs: ['../img/Wood_site/WOOD_20.jpg'] },
-      { type: 'full',     imgs: ['../img/Wood_site/WOOD_21.jpg'] },
-    ]
-  },
-  7: {
-    title: 'Rainbow', year: '2022', cat: 'Digital', sub: 'Stock project', client: 'Treedeo', tools: 'Cinema 4D, Redshift',
-    blocks: [
-      { type: 'full',     imgs: ['../img/Rainbow_site/Rainbow_13.jpg'] },
-      { type: 'carousel', imgs: ['../img/Rainbow_site/Rainbow_02.jpg','../img/Rainbow_site/Rainbow_03.jpg','../img/Rainbow_site/Rainbow_04.jpg','../img/Rainbow_site/Rainbow_05.jpg','../img/Rainbow_site/Rainbow_06.jpg','../img/Rainbow_site/Rainbow_07.jpg'] },
-      { type: 'full',     imgs: ['../img/Rainbow_site/Rainbow_24.jpg'] },
-      { type: 'carousel', imgs: ['../img/Rainbow_site/Rainbow_16.jpg','../img/Rainbow_site/Rainbow_03.jpg','../img/Rainbow_site/Rainbow_11.jpg','../img/Rainbow_site/Rainbow_19.jpg','../img/Rainbow_site/Rainbow_20.jpg'] },
-      { type: 'full',     imgs: ['../img/Rainbow_site/Rainbow_27.jpg'] },
-      { type: 'carousel', imgs: ['../img/Rainbow_site/Rainbow_01.jpg','../img/Rainbow_site/Rainbow_17.jpg','../img/Rainbow_site/Rainbow_18.jpg','../img/Rainbow_site/Rainbow_07.jpg','../img/Rainbow_site/Rainbow_09.jpg'] },
-      { type: 'grid2x2',  imgs: ['../img/Rainbow_site/Rainbow_21.jpg','../img/Rainbow_site/Rainbow_22.jpg','../img/Rainbow_site/Rainbow_23.jpg','../img/Rainbow_site/Rainbow_05.jpg'] },
-      { type: 'full',     imgs: ['../img/Rainbow_site/Rainbow_28.jpg'] },
-    ]
-  },
-};
-
-const id = 7; // hardcoded for /rainbow
-const p = projects[id] || projects[1];
-const ids = Object.keys(projects).map(Number);
-const nextId = ids[(ids.indexOf(id) + 1) % ids.length];
-const next = projects[nextId];
-
-document.getElementById('proj-title').textContent = p.title + ' (' + p.year + ')';
-document.getElementById('proj-meta').innerHTML =
-  `<p><strong>${p.cat}</strong></p><p>${p.sub}</p><p style="margin-top:8px">Client: ${p.client}</p>`;
-document.getElementById('proj-details').innerHTML =
-  `Year: ${p.year}<br>Category: ${p.cat}<br>Tools: ${p.tools}`;
-document.title = p.title + ' — Vasily Alekhin';
-
-const container = document.getElementById('proj-images');
-
-function makeImg(src, zoomable) {
-  const img = document.createElement('img');
-  img.src = src; img.alt = '';
-  if (zoomable) img.onclick = () => openLightbox(src);
-  return img;
-}
-
-function makeCarousel(imgs) {
-  const wrap = document.createElement('div');
-  wrap.className = 'block-carousel';
-  const track = document.createElement('div');
-  track.className = 'carousel-track';
-  imgs.forEach(src => {
-    const img = makeImg(src, false);
-    track.appendChild(img);
+function filterWorks(cat, btn) {
+  document.querySelectorAll('.nav-filters button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.work-card').forEach(card => {
+    card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
   });
-  wrap.appendChild(track);
-
-  // drag + touch logic
-  let startX = 0, offset = 0, dragOffset = 0, dragging = false, moved = false;
-
-  function onStart(clientX) {
-    dragging = true; moved = false;
-    startX = clientX;
-    dragOffset = offset;
-    track.classList.add('is-dragging');
-  }
-  function onMove(clientX) {
-    if (!dragging) return;
-    const dx = clientX - startX;
-    if (Math.abs(dx) > 4) moved = true;
-    const maxOffset = track.scrollWidth - wrap.clientWidth;
-    offset = Math.max(0, Math.min(dragOffset - dx, maxOffset));
-    track.style.transform = `translateX(-${offset}px)`;
-  }
-  function onEnd(target) {
-    if (!dragging) return;
-    dragging = false;
-    track.classList.remove('is-dragging');
-    if (!moved && target) {
-      const img = target.closest('img');
-      if (img) openLightbox(img.src);
-    }
-  }
-
-  // Mouse
-  track.addEventListener('mousedown', e => { onStart(e.clientX); e.preventDefault(); });
-  window.addEventListener('mousemove', e => onMove(e.clientX));
-  window.addEventListener('mouseup', e => onEnd(e.target));
-
-  // Touch
-  track.addEventListener('touchstart', e => { onStart(e.touches[0].clientX); }, { passive: true });
-  track.addEventListener('touchmove', e => { onMove(e.touches[0].clientX); }, { passive: true });
-  track.addEventListener('touchend', e => { onEnd(e.changedTouches[0].target); });
-
-  return wrap;
 }
-
-(p.blocks || []).forEach(block => {
-  const imgs = (block.imgs || []).filter(s => s);
-  if (!imgs.length) return;
-
-  let el;
-  if (block.type === 'full') {
-    el = document.createElement('div');
-    el.className = 'block-full';
-    el.appendChild(makeImg(imgs[0], true));
-  } else if (block.type === 'carousel') {
-    el = makeCarousel(imgs);
-  } else if (block.type === 'grid2x2') {
-    el = document.createElement('div');
-    el.className = 'block-grid2x2';
-    const grid = document.createElement('div');
-    grid.className = 'grid2x2';
-    imgs.forEach(src => grid.appendChild(makeImg(src, true)));
-    el.appendChild(grid);
-  } else if (block.type === '2col') {
-    el = document.createElement('div');
-    el.className = 'block-2col';
-    const row = document.createElement('div');
-    row.className = 'row2col';
-    imgs.forEach(src => row.appendChild(makeImg(src, true)));
-    el.appendChild(row);
-  } else if (block.type === '3col') {
-    el = document.createElement('div');
-    el.className = 'block-3col';
-    const row = document.createElement('div');
-    row.className = 'row3col';
-    imgs.forEach(src => row.appendChild(makeImg(src, true)));
-    el.appendChild(row);
+let aboutOpen = false;
+function toggleAbout(e) {
+  e.preventDefault();
+  aboutOpen = !aboutOpen;
+  const panel = document.getElementById('about-panel');
+  if (aboutOpen) {
+    panel.style.display = 'block';
+    requestAnimationFrame(() => panel.classList.add('open'));
+  } else {
+    panel.classList.remove('open');
+    setTimeout(() => { panel.style.display = 'none'; }, 400);
   }
-  if (el) container.appendChild(el);
-});
+}
+</script>
 
-const nextHref = 'project.html?id=' + nextId;
-document.getElementById('next-title').textContent = next.title + ' (' + next.year + ')';
-document.getElementById('next-link').href = nextHref;
-
-// ── REVEAL HOME ON SCROLL ──
-const wrapper = document.getElementById('page-wrapper');
-let overscroll = 0;
-const THRESHOLD = 400;
-let navigating = false;
-
-window.addEventListener('wheel', e => {
-  const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 2;
-  if (!atBottom || navigating) { if (!atBottom) overscroll = 0; return; }
-  overscroll += e.deltaY;
-  const progress = Math.max(0, Math.min(overscroll / THRESHOLD, 1));
-  wrapper.style.transform = `translateY(-${progress * 80}px)`;
-  wrapper.style.opacity = 1 - progress * 0.3;
-  if (overscroll >= THRESHOLD) {
-    navigating = true;
-    wrapper.style.transition = 'transform 0.5s var(--ease), opacity 0.5s ease';
-    wrapper.style.transform = 'translateY(-100vh)';
-    wrapper.style.opacity = '0';
-    setTimeout(() => { window.location.href = 'index.html'; }, 500);
-  }
-}, { passive: true });
-
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+<script>
+const btn = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
-  const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 2;
-  if (!atBottom) { overscroll = 0; wrapper.style.transform = ''; wrapper.style.opacity = ''; }
-});
-
-function openLightbox(src) {
-  document.getElementById('lightbox-img').src = src;
-  document.getElementById('lightbox').classList.add('open');
-}
-function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  btn.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
 </script>
 </body>
 </html>
