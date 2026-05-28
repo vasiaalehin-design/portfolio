@@ -1,11 +1,19 @@
 // Page transition engine
 const overlay = document.getElementById('overlay');
 
-// Fade in on load
-window.addEventListener('DOMContentLoaded', () => {
-  requestAnimationFrame(() => {
-    document.body.classList.add('ready');
-  });
+// Fade in on load — always restore opacity when page becomes visible
+function fadeIn() {
+  document.body.style.opacity = '1';
+  document.body.style.transition = 'opacity 0.3s ease';
+  document.body.classList.add('ready');
+}
+
+window.addEventListener('DOMContentLoaded', fadeIn);
+
+// Also handle back/forward navigation (bfcache)
+window.addEventListener('pageshow', (e) => {
+  document.body.style.opacity = '1';
+  document.body.style.transition = 'opacity 0.3s ease';
 });
 
 // Intercept all [data-link] clicks
@@ -18,7 +26,6 @@ document.addEventListener('click', e => {
   e.preventDefault();
 
   // Fade out
-  overlay.classList.add('out');
   document.body.style.transition = 'opacity 0.3s ease';
   document.body.style.opacity = '0';
 
