@@ -69,7 +69,7 @@ const projects = {
       { type: '2col',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes_setup.jpg','img/Land_cruiser_site/sc_06_sanddunes_setup_2.jpg'] },
       { type: 'full',  imgs: ['img/Land_cruiser_site/2023_02_06_19_38_15.gif'] },
     ]},
-  'mapping-02': { url: 'mapping/mapping-02', title: 'Mapping 02', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: '', 
+  'mapping-02': { url: 'mapping/vivienne-sabó', title: 'Vivienne Sabó', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: '', 
     blocks: [
       { type: 'full',  imgs: ['img/VIVIENNE_SABÓ_site/VSabo_03.jpg'] },
       { type: '2col',  imgs: ['img/VIVIENNE_SABÓ_site/VSabo_02.jpg','img/VIVIENNE_SABÓ_site/VSabo_04.jpg'] },
