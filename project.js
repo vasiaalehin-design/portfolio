@@ -5,6 +5,9 @@ function render(id) {
   if (!p) return;
 
   document.title = p.title.toUpperCase() + ' — Vasily Alekhin';
+  // Убедимся что site-title виден
+  const st = document.querySelector('.site-title');
+  if (st) { st.style.cssText = 'font-family:Libre Baskerville,Georgia,serif;font-style:italic;font-size:15px;text-decoration:none;color:#111;letter-spacing:0.01em;display:inline-block;'; }
 
   let blocks = '';
   p.blocks.forEach(b => {
