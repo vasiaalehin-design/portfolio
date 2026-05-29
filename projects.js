@@ -61,7 +61,7 @@ const projects = {
       { type: '2col',  imgs: ['img/Wood_site/WOOD_07.jpg','img/Wood_site/WOOD_08.jpg'] },
       { type: 'full',  imgs: ['img/Wood_site/WOOD_21.jpg'] },
     ]},
-  'mapping-01': { url: 'mapping/mapping-01', title: 'Land cruiser', year: '2024', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '',
+  'land-cruiser': { url: 'mapping/land-cruiser', title: 'Land cruiser', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '',
     blocks: [
       { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_Sanddunes_stillframe.jpg'] },
       { type: 'video',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes.mp4'] },
