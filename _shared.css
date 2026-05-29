@@ -15,7 +15,7 @@ header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex
 .header-nav .comma { margin-right: 12px; }
 
 /* NAV (главная) */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 14px 30px; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 14px 30px; background: rgba(250,249,247,0.95); backdrop-filter: blur(8px); }
 .nav-logo { font-family: 'Libre Baskerville', Georgia, serif; font-style: italic; font-size: 15px; text-decoration: none; color: var(--text); letter-spacing: 0.01em; }
 .nav-right { display: flex; align-items: center; }
 .nav-filters { display: flex; gap: 0; list-style: none; align-items: center; }
