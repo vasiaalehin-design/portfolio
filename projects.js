@@ -65,8 +65,8 @@ const projects = {
     blocks: [
       { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_Sanddunes_stillframe.jpg'] },
       { type: 'video', imgs: ['img/Land_cruiser_site/sc_06_sanddunes.mp4'] },
-      { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes_Led_Smoke.gif'] },
-      { type: '2col',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes_setup.jpg','img/Land_cruiser_site/sc_06_sanddunes_setup_2.jpg'] },
+      { type: 'video', imgs: ['img/Land_cruiser_site/sc_06_sanddunes_Led_Smoke.mp4'] },
+      { type: 'video', imgs: ['img/Land_cruiser_site/sc_06_sanddunes_Led_GEO.mp4'] },
       { type: 'full',  imgs: ['img/Land_cruiser_site/2023_02_06_19_38_15.gif'] },
     ]},
   'mapping-02': { url: 'mapping/vivienne-sabó', title: 'Vivienne Sabó', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: '', 
