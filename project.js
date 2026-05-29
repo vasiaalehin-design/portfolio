@@ -27,8 +27,8 @@ function render(id) {
     <div class="project-intro reveal">
       <a href="/" class="back-link" data-link>&#8592; BACK</a>
       <div class="project-intro-inner">
-        <h1 class="project-title">${p.title.toUpperCase()} (${p.year})</h1>
-        <div class="project-tags"><span>${p.cat}</span><span>${p.sub}</span><span>Client: ${p.client}</span></div>
+        <h1 class="project-title" style="flex:1">${p.title.toUpperCase()} (${p.year})</h1>
+        <div class="project-tags" style="flex-direction:column;align-items:flex-end;gap:4px"><span>${p.cat}</span><span>${p.sub}</span><span>Client: ${p.client}</span></div>
       </div>
     </div>
     <div class="divider reveal"></div>
@@ -51,7 +51,17 @@ function render(id) {
   document.getElementById('n').innerHTML = nav;
 
   // Запускаем _transitions.js вручную после рендера
-  document.querySelectorAll('.reveal').forEach(el => revealObs && revealObs.observe(el));
+  setTimeout(() => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 70);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  }, 0);
 }
 
 // Carousel
