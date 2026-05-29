@@ -1,5 +1,5 @@
 const projects = {
-  'color':      { url: 'digital/color',      title: 'Color',      year: '2025', cat: 'Digital',  sub: 'Stock project',   client: 'Treedeo',   desc: '',
+  'color':      { url: 'digital/color',      title: 'Color',      year: '2025', cat: 'Digital',  sub: 'Stock project',   client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
     blocks: [
       { type: 'full',     imgs: ['img/Color_Site/COLOR_18.jpg'] },
       { type: 'carousel', imgs: ['img/Color_Site/COLOR_19.jpg','img/Color_Site/COLOR_14.jpg','img/Color_Site/COLOR_20.jpg','img/Color_Site/COLOR_03.jpg'] },
@@ -9,7 +9,7 @@ const projects = {
       { type: '2col',     imgs: ['img/Color_Site/COLOR_17.jpg','img/Color_Site/COLOR_18.jpg'] },
       { type: 'full',     imgs: ['img/Color_Site/COLOR_07.jpg'] },
     ]},
-  'glass':      { url: 'digital/glass',      title: 'Glass',      year: '2024', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
+  'glass':      { url: 'digital/glass',      title: 'Glass',      year: '2024', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
     blocks: [
       { type: 'full',     imgs: ['img/GLASS_site/GLASS_01.jpg'] },
       { type: 'carousel', imgs: ['img/GLASS_site/GLASS_02.jpg','img/GLASS_site/GLASS_03.jpg','img/GLASS_site/GLASS_04.jpg','img/GLASS_site/GLASS_05.jpg','img/GLASS_site/GLASS_07.jpg'] },
@@ -22,14 +22,14 @@ const projects = {
       { type: '2col',     imgs: ['img/GLASS_site/GLASS_22.jpg','img/GLASS_site/GLASS_23.jpg'] },
       { type: 'full',     imgs: ['img/GLASS_site/GLASS_20.jpg'] },
     ]},
-  'tex':        { url: 'digital/tex',        title: 'Tex',        year: '2023', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
+  'tex':        { url: 'digital/tex',        title: 'Tex',        year: '2023', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
     blocks: [
       { type: 'full',  imgs: ['img/Tex_Site/Tex_04.jpg'] },
       { type: '2col',  imgs: ['img/Tex_Site/Tex_02.jpg','img/Tex_Site/Tex_03.jpg'] },
       { type: '2col',  imgs: ['img/Tex_Site/Tex_05.jpg','img/Tex_Site/Tex_06.jpg'] },
       { type: 'full',  imgs: ['img/Tex_Site/Tex_07.jpg'] },
     ]},
-  'title':      { url: 'digital/title',      title: 'Title',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
+  'title':      { url: 'digital/title',      title: 'Title',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
     blocks: [
       { type: 'full',     imgs: ['img/TITLE_site/TITLE_13.jpg'] },
       { type: 'carousel', imgs: ['img/TITLE_site/TITLE_19.jpg','img/TITLE_site/TITLE_20.jpg','img/TITLE_site/TITLE_17.jpg','img/TITLE_site/TITLE_21.jpg','img/TITLE_site/TITLE_06.jpg'] },
@@ -38,14 +38,14 @@ const projects = {
       { type: '2col',     imgs: ['img/TITLE_site/TITLE_12.jpg','img/TITLE_site/TITLE_01.jpg'] },
       { type: 'full',     imgs: ['img/TITLE_site/TITLE_14.jpg'] },
     ]},
-  'waves':      { url: 'digital/waves',      title: 'Waves',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
+  'waves':      { url: 'digital/waves',      title: 'Waves',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
     blocks: [
       { type: 'full',  imgs: ['img/WAVES_site/WAVES_01.jpg'] },
       { type: '2col',  imgs: ['img/WAVES_site/WAVES_06.jpg','img/WAVES_site/WAVES_03.jpg'] },
       { type: 'full',  imgs: ['img/WAVES_site/WAVES_09.jpg'] },
       { type: '2col',  imgs: ['img/WAVES_site/WAVES_07.jpg','img/WAVES_site/WAVES_08.jpg'] },
     ]},
-  'rainbow':    { url: 'digital/rainbow',    title: 'Rainbow',    year: '2022', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
+  'rainbow':    { url: 'digital/rainbow',    title: 'Rainbow',    year: '2022', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
     blocks: [
       { type: 'full',     imgs: ['img/Rainbow_site/Rainbow_01.jpg'] },
       { type: 'carousel', imgs: ['img/Rainbow_site/Rainbow_25.jpg','img/Rainbow_site/Rainbow_26.jpg','img/Rainbow_site/Rainbow_27.jpg','img/Rainbow_site/Rainbow_28.jpg'] },
@@ -53,7 +53,7 @@ const projects = {
       { type: '2col',     imgs: ['img/Rainbow_site/Rainbow_05.jpg','img/Rainbow_site/Rainbow_06.jpg'] },
       { type: 'full',     imgs: ['img/Rainbow_site/Rainbow_02.jpg'] },
     ]},
-  'wood':       { url: 'digital/wood',       title: 'Wood',       year: '2022', cat: 'Digital',  sub: 'Personal project', client: 'Treedeo',   desc: '',
+  'wood':       { url: 'digital/wood',       title: 'Wood',       year: '2022', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
     blocks: [
       { type: 'full',  imgs: ['img/Wood_site/WOOD_01.jpg'] },
       { type: '2col',  imgs: ['img/Wood_site/WOOD_06.jpg','img/Wood_site/WOOD_05.jpg'] },
@@ -61,7 +61,7 @@ const projects = {
       { type: '2col',  imgs: ['img/Wood_site/WOOD_07.jpg','img/Wood_site/WOOD_08.jpg'] },
       { type: 'full',  imgs: ['img/Wood_site/WOOD_21.jpg'] },
     ]},
-  'land-cruiser': { url: 'mapping/land-cruiser', title: 'Land cruiser', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: 'The task was to create a full CG video featuring a Land Cruiser 300 in various extreme conditions. I had a scene in the desert.',
+  'land-cruiser': { url: 'mapping/land-cruiser', title: 'Land cruiser', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: 'The task was to create a full CG video featuring a Land Cruiser 300 in various extreme conditions. I had a scene in the desert.',
     blocks: [
       { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_Sanddunes_stillframe.jpg'] },
       { type: 'video',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes.mp4'] },
