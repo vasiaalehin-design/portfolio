@@ -61,7 +61,7 @@ const projects = {
       { type: '2col',  imgs: ['img/Wood_site/WOOD_07.jpg','img/Wood_site/WOOD_08.jpg'] },
       { type: 'full',  imgs: ['img/Wood_site/WOOD_21.jpg'] },
     ]},
-  'land-cruiser': { url: 'mapping/land-cruiser', title: 'Land cruiser', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: 'Задача была сделать фулл CG ролик с автомобилеме Land Cruser 300 в разных эксримеальный условиях. У меня была сцена в пустыне.',
+  'land-cruiser': { url: 'mapping/land-cruiser', title: 'Land cruiser', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: 'The task was to create a full CG video featuring a Land Cruiser 300 in various extreme conditions. I had a scene in the desert.',
     blocks: [
       { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_Sanddunes_stillframe.jpg'] },
       { type: 'video',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes.mp4'] },
