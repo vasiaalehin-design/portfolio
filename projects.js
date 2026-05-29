@@ -64,7 +64,7 @@ const projects = {
   'mapping-01': { url: 'mapping/mapping-01', title: 'Land cruiser', year: '2024', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '',
     blocks: [
       { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_Sanddunes_stillframe.jpg'] },
-      { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes.mp4'] },
+      { type: 'video',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes.mp4'] },
       { type: 'full',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes_Led_Smoke.gif'] },
       { type: '2col',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes_setup.jpg','img/Land_cruiser_site/sc_06_sanddunes_setup_2.jpg'] },
       { type: 'full',  imgs: ['img/Land_cruiser_site/2023_02_06_19_38_15.gif'] },

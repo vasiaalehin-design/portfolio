@@ -19,6 +19,8 @@ function render(id) {
       blocks += `<div class="block-carousel reveal"><div class="carousel-track">${imgs}</div><button class="carousel-btn prev">&#8249;</button><button class="carousel-btn next">&#8250;</button><div class="carousel-dots">${dots}</div></div>`;
     } else if (b.type === 'grid2x2') {
       blocks += `<div class="block-grid2x2 reveal">${b.imgs.map(s=>`<img src="/${s}" loading="lazy">`).join('')}</div>`;
+    } else if (b.type === 'video') {
+      blocks += `<div class="block-full reveal"><video src="/${b.imgs[0]}" autoplay loop muted playsinline style="width:100%;display:block;"></video></div>`;
     } else if (b.type === '2col') {
       blocks += `<div class="block-2col reveal">${b.imgs.map(s=>`<img src="/${s}" loading="lazy">`).join('')}</div>`;
     } else if (b.type === '3col') {
