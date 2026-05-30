@@ -92,5 +92,6 @@ const projects = {
       { type: 'full',      imgs: ['img/TAVRIDA_sita/TAVRIDA_01.jpg'] },
       { type: 'full',      imgs: ['img/TAVRIDA_sita/TAVRIDA_02.jpg'] },
       { type: 'video',     imgs: ['img/TAVRIDA_sita/TAVRIDA_video.mp4'] },
-    ] },
+    ] }
    },
+
