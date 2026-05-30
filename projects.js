@@ -55,11 +55,13 @@ const projects = {
     ]},
   'wood':       { url: 'digital/wood',       title: 'Wood',       year: '2022', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
     blocks: [
-      { type: 'full',  imgs: ['img/Wood_site/WOOD_01.jpg'] },
-      { type: '2col',  imgs: ['img/Wood_site/WOOD_06.jpg','img/Wood_site/WOOD_05.jpg'] },
-      { type: 'full',  imgs: ['img/Wood_site/WOOD_09.jpg'] },
-      { type: '2col',  imgs: ['img/Wood_site/WOOD_07.jpg','img/Wood_site/WOOD_08.jpg'] },
-      { type: 'full',  imgs: ['img/Wood_site/WOOD_21.jpg'] },
+      { type: 'full',     imgs: ['img/Wood_site/WOOD_01.jpg'] },
+      { type: '2col',     imgs: ['img/Wood_site/WOOD_06.jpg','img/Wood_site/WOOD_05.jpg'] },
+      { type: 'carousel', imgs: ['img/Wood_site/WOOD_04.jpg','img/Wood_site/WOOD_02.jpg','img/Wood_site/WOOD_03.jpg','img/Wood_site/WOOD_10.jpg'] },
+      { type: 'full',     imgs: ['img/Wood_site/WOOD_09.jpg'] },
+      { type: '2col',     imgs: ['img/Wood_site/WOOD_07.jpg','img/Wood_site/WOOD_08.jpg'] },
+      { type: 'carousel', imgs: ['img/Wood_site/WOOD_13.jpg','img/Wood_site/WOOD_15.jpg','img/Wood_site/WOOD_16.jpg','img/Wood_site/WOOD_18.jpg','img/Wood_site/WOOD_19.jpg'] },
+      { type: 'full',     imgs: ['img/Wood_site/WOOD_21.jpg'] },
     ]},
   'land-cruiser': { url: 'mapping/land-cruiser', title: 'Land cruiser', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: 'The task was to create a full CG video featuring a Land Cruiser 300 in various extreme conditions. I had a scene in the desert.',
     blocks: [
