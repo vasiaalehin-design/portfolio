@@ -83,10 +83,8 @@ const projects = {
     ]},
   'mapping': { url: 'mapping/projects', title: 'Mapping', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: '', 
     blocks: [
-      { type: 'full',      imgs: ['img/NEVSKIY_site/NEVSKIY_Wood_01.jpg'] },
-      { type: 'video',     imgs: ['img/NEVSKIY_site/NEVSKIY_Wood_video.mp4'] },
-      { type: 'full',      imgs: ['img/NEVSKIY_site/NEVSKIY_Metal_02.jpg'] },
-      { type: 'video',     imgs: ['img/NEVSKIY_site/NEVSKIY_Metal_video.mp4'] },
+      { type: 'imgvideo',  imgs: ['img/NEVSKIY_site/NEVSKIY_Wood_01.jpg','img/NEVSKIY_site/NEVSKIY_Wood_video.mp4'] },
+      { type: 'imgvideo',  imgs: ['img/NEVSKIY_site/NEVSKIY_Metal_02.jpg','img/NEVSKIY_site/NEVSKIY_Metal_video.mp4'] },
       { type: 'full',      imgs: ['img/PLANETARY_site/PLANETARY_01.jpg'] },
       { type: 'video',     imgs: ['img/PLANETARY_site/PLANETARY_01_video.mp4'] },
       { type: '2col',      imgs: ['img/VDNH_site/sc_05_Flowers.jpg','img/VDNH_site/sc_04_Map.jpg'] },
@@ -95,6 +93,4 @@ const projects = {
       { type: 'full',      imgs: ['img/TAVRIDA_sita/TAVRIDA_02.jpg'] },
       { type: 'video',     imgs: ['img/TAVRIDA_sita/TAVRIDA_video.mp4'] },
     ] },
-  'mapping-04': { url: 'mapping/mapping-04', title: 'Mapping 04', year: '2022', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '', blocks: [] },
-  'mapping-05': { url: 'mapping/mapping-05', title: 'Mapping 05', year: '2022', cat: 'Mapping',  sub: 'Commercial',       client: 'DreamLaser', desc: '', blocks: [] },
-};
+   },
