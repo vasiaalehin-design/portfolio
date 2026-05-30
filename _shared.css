@@ -49,7 +49,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; j
 .block-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 4px 30px; }
 .block-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; padding: 4px 30px; }
 .block-grid2x2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 4px 30px; }
-.block-2col img, .block-3col img, .block-grid2x2 img { width: 100%; display: block; }
+.block-2col img, .block-3col img, .block-grid2x2 img, .block-2col video, .block-3col video, .block-grid2x2 video { width: 100%; display: block; }
 
 /* CAROUSEL */
 .block-carousel { position: relative; overflow: hidden; margin: 4px 30px; cursor: grab; }
