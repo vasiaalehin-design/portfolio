@@ -25,12 +25,12 @@ function render(id) {
       blocks += `<div class="block-2col reveal">${b.imgs.map(s=>`<video src="/${s}" autoplay loop muted playsinline style="width:100%;display:block;"></video>`).join('')}</div>`;
     } else if (b.type === 'imgvideo') {
       const left = b.imgs[0].endsWith('.mp4') 
-        ? `<video src="/${b.imgs[0]}" autoplay loop muted playsinline style="width:100%;display:block;"></video>`
-        : `<img src="/${b.imgs[0]}" loading="lazy">`;
+        ? `<video src="/${b.imgs[0]}" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>`
+        : `<img src="/${b.imgs[0]}" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">`;
       const right = b.imgs[1].endsWith('.mp4')
-        ? `<video src="/${b.imgs[1]}" autoplay loop muted playsinline style="width:100%;display:block;"></video>`
-        : `<img src="/${b.imgs[1]}" loading="lazy">`;
-      blocks += `<div class="block-2col reveal">${left}${right}</div>`;
+        ? `<video src="/${b.imgs[1]}" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;display:block;"></video>`
+        : `<img src="/${b.imgs[1]}" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">`;
+      blocks += `<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:4px 30px;" class="reveal">${left}${right}</div>`;
     } else if (b.type === '2col') {
       blocks += `<div class="block-2col reveal">${b.imgs.map(s=>`<img src="/${s}" loading="lazy">`).join('')}</div>`;
     } else if (b.type === '3col') {
