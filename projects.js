@@ -81,7 +81,7 @@ const projects = {
       { type: 'video2col', imgs: ['img/VIVIENNE_SABÓ_site/VSabo_video_03.mp4','img/VIVIENNE_SABÓ_site/VSabo_video_02.mp4'] },
       { type: 'video',     imgs: ['img/VIVIENNE_SABÓ_site/VSabo_video_FULL.mp4'] },
     ]},
-  'mapping': { url: 'mapping/mapping', title: 'Mapping', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: '', 
+  'mapping': { url: 'mapping/projects', title: 'Mapping', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: '', 
     blocks: [
       { type: 'full',      imgs: ['img/NEVSKIY_site/NEVSKIY_Wood_01.jpg'] },
       { type: 'video',     imgs: ['img/NEVSKIY_site/NEVSKIY_Wood_video.mp4'] },
