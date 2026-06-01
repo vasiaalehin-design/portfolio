@@ -81,7 +81,7 @@ const projects = {
       { type: 'video2col', imgs: ['img/VIVIENNE_SABO_site/VSabo_video_03.mp4','img/VIVIENNE_SABO_site/VSabo_video_02.mp4'] },
       { type: 'video',     imgs: ['img/VIVIENNE_SABO_site/VSabo_video_FULL.mp4'] },
     ]},
-  'mapping': { url: 'mapping/projects', title: 'Mapping', year: '', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: 'Here are presented the various works that I did for the company in 2024-2025.', 
+  'mapping': { url: 'mapping/projects', title: 'Mapping', year: '2024-2025', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: 'Here are presented the various works that I did for the company in 2024-2025.', 
     blocks: [
       { type: 'imgvideo',  imgs: ['img/NEVSKIY_site/NEVSKIY_Wood_01.jpg','img/NEVSKIY_site/NEVSKIY_Wood_video.mp4'] },
       { type: 'imgvideo',  imgs: ['img/NEVSKIY_site/NEVSKIY_Metal_02.jpg','img/NEVSKIY_site/NEVSKIY_Metal_video.mp4'] },
