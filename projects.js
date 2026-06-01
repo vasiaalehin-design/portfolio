@@ -1,5 +1,5 @@
 const projects = {
-  'color':      { url: 'digital/color',      title: 'Color',      year: '2025', cat: 'Digital',  sub: 'Stock project',   client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
+  'color':      { url: 'digital/color',      title: 'Color',      year: '2025', cat: 'Digital',  sub: 'Stock project',   client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: 'The task was to create a series of works with bright colors, simple shapes, and tactile textures.',
     blocks: [
       { type: 'full',     imgs: ['img/Color_Site/COLOR_18.jpg'] },
       { type: 'carousel', imgs: ['img/Color_Site/COLOR_19.jpg','img/Color_Site/COLOR_14.jpg','img/Color_Site/COLOR_20.jpg','img/Color_Site/COLOR_03.jpg'] },
@@ -9,7 +9,7 @@ const projects = {
       { type: '2col',     imgs: ['img/Color_Site/COLOR_17.jpg','img/Color_Site/COLOR_18.jpg'] },
       { type: 'full',     imgs: ['img/Color_Site/COLOR_07.jpg'] },
     ]},
-  'glass':      { url: 'digital/glass',      title: 'Glass',      year: '2024', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
+  'glass':      { url: 'digital/glass',      title: 'Glass',      year: '2024', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: 'I really enjoy working with glass and reflections. This series of works was one of them. Very smooth movements and pleasant gradients further intricate the already complex reflections in the geometry itself.',
     blocks: [
       { type: 'full',     imgs: ['img/GLASS_site/GLASS_01.jpg'] },
       { type: 'carousel', imgs: ['img/GLASS_site/GLASS_02.jpg','img/GLASS_site/GLASS_03.jpg','img/GLASS_site/GLASS_04.jpg','img/GLASS_site/GLASS_05.jpg','img/GLASS_site/GLASS_07.jpg'] },
@@ -29,7 +29,7 @@ const projects = {
       { type: '2col',  imgs: ['img/Tex_Site/Tex_05.jpg','img/Tex_Site/Tex_06.jpg'] },
       { type: 'full',  imgs: ['img/Tex_Site/Tex_07.jpg'] },
     ]},
-  'title':      { url: 'digital/title',      title: 'Title',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
+  'title':      { url: 'digital/title',      title: 'Title',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: 'The task was to create a series of footage on the theme of computer games. I took simple geometry, but complicated it with color and gradients. I liked that they work well for titles or intros where you can place text in the background and it will look organic and pleasing.',
     blocks: [
       { type: 'full',     imgs: ['img/TITLE_site/TITLE_13.jpg'] },
       { type: 'carousel', imgs: ['img/TITLE_site/TITLE_19.jpg','img/TITLE_site/TITLE_20.jpg','img/TITLE_site/TITLE_17.jpg','img/TITLE_site/TITLE_21.jpg','img/TITLE_site/TITLE_06.jpg'] },
@@ -38,14 +38,14 @@ const projects = {
       { type: '2col',     imgs: ['img/TITLE_site/TITLE_12.jpg','img/TITLE_site/TITLE_01.jpg'] },
       { type: 'full',     imgs: ['img/TITLE_site/TITLE_14.jpg'] },
     ]},
-  'waves':      { url: 'digital/waves',      title: 'Waves',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
+  'waves':      { url: 'digital/waves',      title: 'Waves',      year: '2023', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: 'The task was to create a series of simple footage with light moods. I wanted to create pleasant waves with beautiful textures and pleasant reflections.',
     blocks: [
       { type: 'full',  imgs: ['img/WAVES_site/WAVES_01.jpg'] },
       { type: '2col',  imgs: ['img/WAVES_site/WAVES_06.jpg','img/WAVES_site/WAVES_03.jpg'] },
       { type: 'full',  imgs: ['img/WAVES_site/WAVES_09.jpg'] },
       { type: '2col',  imgs: ['img/WAVES_site/WAVES_07.jpg','img/WAVES_site/WAVES_08.jpg'] },
     ]},
-  'rainbow':    { url: 'digital/rainbow',    title: 'Rainbow',    year: '2022', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
+  'rainbow':    { url: 'digital/rainbow',    title: 'Rainbow',    year: '2022', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: 'I enjoy working with glass and reflections. This piece is one of them. Its clearer shapes and complex gradients make it interesting and pleasing to the eye.',
     blocks: [
       { type: 'full',     imgs: ['img/Rainbow_site/Rainbow_01.jpg'] },
       { type: 'carousel', imgs: ['img/Rainbow_site/Rainbow_25.jpg','img/Rainbow_site/Rainbow_26.jpg','img/Rainbow_site/Rainbow_27.jpg','img/Rainbow_site/Rainbow_28.jpg'] },
@@ -53,7 +53,7 @@ const projects = {
       { type: '2col',     imgs: ['img/Rainbow_site/Rainbow_05.jpg','img/Rainbow_site/Rainbow_06.jpg'] },
       { type: 'full',     imgs: ['img/Rainbow_site/Rainbow_02.jpg'] },
     ]},
-  'wood':       { url: 'digital/wood',       title: 'Wood',       year: '2022', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: '',
+  'wood':       { url: 'digital/wood',       title: 'Wood',       year: '2022', cat: 'Digital',  sub: 'Personal project', client: '<a href="https://treedeo.com" target="_blank" style="color:inherit;text-decoration:underline;">Treedeo</a>',   desc: 'The task was to create footage with wood texture. The tactile texture and contrasting shadows give the scene a pleasant feel.',
     blocks: [
       { type: 'full',     imgs: ['img/Wood_site/WOOD_01.jpg'] },
       { type: '2col',     imgs: ['img/Wood_site/WOOD_06.jpg','img/Wood_site/WOOD_05.jpg'] },
@@ -71,7 +71,7 @@ const projects = {
       { type: 'video', imgs: ['img/Land_cruiser_site/sc_06_sanddunes_Led_GEO.mp4'] },
       { type: 'video',  imgs: ['img/Land_cruiser_site/sc_06_sanddunes_Cinema4D.mp4'] },
     ]},
-  'vivienne-sabo': { url: 'mapping/vivienne-sabo', title: 'Vivienne Sabó', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: '', 
+  'vivienne-sabo': { url: 'mapping/vivienne-sabo', title: 'Vivienne Sabó', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: 'The task was to create a stage for the VIVIENNE SABÓ company. I had EXCENTRIQUE mascara.', 
     blocks: [
       { type: '2col',      imgs: ['img/VIVIENNE_SABO_site/VSabo_03.jpg','img/VIVIENNE_SABO_site/VSabo_01.jpg'] },
       { type: '2col',      imgs: ['img/VIVIENNE_SABO_site/VSabo_02.jpg','img/VIVIENNE_SABO_site/VSabo_04.jpg'] },
@@ -81,7 +81,7 @@ const projects = {
       { type: 'video2col', imgs: ['img/VIVIENNE_SABO_site/VSabo_video_03.mp4','img/VIVIENNE_SABO_site/VSabo_video_02.mp4'] },
       { type: 'video',     imgs: ['img/VIVIENNE_SABO_site/VSabo_video_FULL.mp4'] },
     ]},
-  'mapping': { url: 'mapping/projects', title: 'Mapping', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: '', 
+  'mapping': { url: 'mapping/projects', title: 'Mapping', year: '2023', cat: 'Mapping',  sub: 'Commercial',       client: '<a href="https://www.dreamlaser.ru/" target="_blank" style="color:inherit;text-decoration:underline;">DreamLaser</a>', desc: 'Here are presented the various works that I did for the company in 2024-2025.', 
     blocks: [
       { type: 'imgvideo',  imgs: ['img/NEVSKIY_site/NEVSKIY_Wood_01.jpg','img/NEVSKIY_site/NEVSKIY_Wood_video.mp4'] },
       { type: 'imgvideo',  imgs: ['img/NEVSKIY_site/NEVSKIY_Metal_02.jpg','img/NEVSKIY_site/NEVSKIY_Metal_video.mp4'] },
